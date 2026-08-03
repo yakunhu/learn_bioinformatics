@@ -1,0 +1,13 @@
+sample_id,sex,age,replicate,treatment,batch,collection_date,fastq_file,notes
+F_D7_R1,F,D7,1,control,B1,2026-01-07,F_D7_R1_R1.fastq.gz,ok
+F_D7_R2,F,D7,2,control,B1,2026-01-07,F_D7_R2_R1.fastq.gz,ok
+M_D7_R1,M,D7,1,control,B1,2026-01-07,M_D7_R1_R1.fastq.gz,ok
+M_D7_R2,M,D7,2,control,B1,2026-01-07,M_D7_R2_R1.fastq.gz,ok
+F_D14_R1,F,D14,1,control,B2,2026-01-14,F_D14_R1_R1.fastq.gz,ok
+F_D14_R2,F,D14,2,control,B2,2026-01-14,F_D14_R2_R1.fastq.gz,low RNA input
+M_D14_R1,M,D14,1,control,B2,2026-01-14,M_D14_R1_R1.fastq.gz,ok
+M_D14_R2,M,D14,2,control,B2,2026-01-14,M_D14_R2_R1.fastq.gz,ok
+F_Adult_R1,F,Adult,1,control,B3,2026-04-15,F_Adult_R1_R1.fastq.gz,ok
+F_Adult_R2,F,Adult,2,control,B3,2026-04-15,F_Adult_R2_R1.fastq.gz,
+M_Adult_R1,M,Adult,1,control,B3,2026-04-15,M_Adult_R1_R1.fastq.gz,ok
+M_Adult_R2,M,Adult,2,control,B3,2026-04-15,M_Adult_R2_R1.fastq.gz,ok

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Programming Tutor Setup"
+  short_description: "Initialize separate R and Python curricula"
+  default_prompt: "Use $programming-tutor-setup to initialize my assignment-based R and Python learning state."

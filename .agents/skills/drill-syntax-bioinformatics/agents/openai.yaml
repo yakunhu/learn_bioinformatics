@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bioinformatics Quickfire Drill"
+  short_description: "Rapid Python, R, and statistics recall"
+  default_prompt: "Use $drill-syntax-bioinformatics to start a rapid bioinformatics quickfire drill."

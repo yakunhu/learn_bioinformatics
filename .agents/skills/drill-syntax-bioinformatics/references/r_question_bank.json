@@ -1,0 +1,1384 @@
+{
+  "schema_version": 2,
+  "language": "r",
+  "progress_migration": {
+    "revision": "bioinformatics-repository-calibrated-v2",
+    "strategy": "preserve_matching_question_ids"
+  },
+  "categories": [
+    {
+      "id": "core",
+      "label": "Core values, coercion, and practical missing data",
+      "question_bank_size": 10
+    },
+    {
+      "id": "vectors",
+      "label": "Vectors and vectorized operations",
+      "question_bank_size": 12
+    },
+    {
+      "id": "subsetting",
+      "label": "Indexing, filtering, and subsetting",
+      "question_bank_size": 16
+    },
+    {
+      "id": "containers",
+      "label": "Matrices, lists, and sparse matrices",
+      "question_bank_size": 14
+    },
+    {
+      "id": "data_frames",
+      "label": "Data frames, tibbles, and sample metadata",
+      "question_bank_size": 16
+    },
+    {
+      "id": "functions_control",
+      "label": "Functions, control flow, validation, and errors",
+      "question_bank_size": 16
+    },
+    {
+      "id": "iteration",
+      "label": "Apply-family and functional iteration",
+      "question_bank_size": 10
+    },
+    {
+      "id": "dplyr",
+      "label": "dplyr pipelines and grouped operations",
+      "question_bank_size": 14
+    },
+    {
+      "id": "joins_reshaping",
+      "label": "Joins and reshaping",
+      "question_bank_size": 10
+    },
+    {
+      "id": "strings_io",
+      "label": "Strings, paths, file I/O, and namespaces",
+      "question_bank_size": 12
+    },
+    {
+      "id": "factors_design",
+      "label": "Factors, formulas, and design matrices",
+      "question_bank_size": 12
+    },
+    {
+      "id": "object_systems",
+      "label": "S3/S4 objects, methods, and Bioconductor containers",
+      "question_bank_size": 20
+    },
+    {
+      "id": "ggplot2",
+      "label": "Reading ggplot2 code",
+      "question_bank_size": 10
+    },
+    {
+      "id": "repo_debugging",
+      "label": "Package structure, tests, and debugging",
+      "question_bank_size": 8
+    }
+  ],
+  "questions": [
+    {
+      "id": "fundamentals_002",
+      "category": "core",
+      "prompt": "What does `typeof(3)` return in R?",
+      "answer": "`\"double\"`.",
+      "explanation": "An ordinary numeric literal is stored as a double unless it has the integer suffix `L`."
+    },
+    {
+      "id": "fundamentals_003",
+      "category": "core",
+      "prompt": "What does `typeof(3L)` return?",
+      "answer": "`\"integer\"`.",
+      "explanation": "The `L` suffix creates an integer literal."
+    },
+    {
+      "id": "fundamentals_006",
+      "category": "core",
+      "prompt": "What does `NA == NA` return?",
+      "answer": "`NA`.",
+      "explanation": "Equality involving an unknown value is itself unknown; use `is.na()` to test missingness."
+    },
+    {
+      "id": "fundamentals_007",
+      "category": "core",
+      "prompt": "Which base R function tests whether values are missing?",
+      "answer": "`is.na()`.",
+      "explanation": "It returns a logical result for each element."
+    },
+    {
+      "id": "fundamentals_010",
+      "category": "core",
+      "prompt": "What does `is.null(NULL)` return?",
+      "answer": "`TRUE`.",
+      "explanation": "`NULL` represents the absence of an object or component, not a length-one missing value."
+    },
+    {
+      "id": "fundamentals_011",
+      "category": "core",
+      "prompt": "What is `length(NULL)`?",
+      "answer": "`0`.",
+      "explanation": "`NULL` is a zero-length object."
+    },
+    {
+      "id": "fundamentals_012",
+      "category": "core",
+      "prompt": "What does `identical(1, 1L)` return?",
+      "answer": "`FALSE`.",
+      "explanation": "`identical()` compares type as well as value; `1` is double and `1L` is integer."
+    },
+    {
+      "id": "fundamentals_013",
+      "category": "core",
+      "prompt": "What value does `as.numeric(\"3.5\")` produce?",
+      "answer": "`3.5`.",
+      "explanation": "The character string is parsed as a numeric value."
+    },
+    {
+      "id": "core_001",
+      "category": "core",
+      "prompt": "In `if (!is.numeric(counts)) stop(\"counts must be numeric\")`, what does `is.numeric(counts)` test?",
+      "answer": "Whether `counts` is stored as a numeric type, including integer or double.",
+      "explanation": "This is a common input check for count or expression matrices; it does not test whether every value is finite or non-missing."
+    },
+    {
+      "id": "core_002",
+      "category": "core",
+      "prompt": "What does `mean(c(4, NA, 6), na.rm = TRUE)` return?",
+      "answer": "`5`.",
+      "explanation": "`na.rm = TRUE` removes missing values before computing the mean."
+    },
+    {
+      "id": "fundamentals_004",
+      "category": "vectors",
+      "prompt": "What vector results from `c(TRUE, 2)`?",
+      "answer": "The numeric vector `c(1, 2)`.",
+      "explanation": "Atomic vectors have one common type, so the logical value is coerced to numeric."
+    },
+    {
+      "id": "fundamentals_005",
+      "category": "vectors",
+      "prompt": "What type of vector results from `c(1, \"2\")`?",
+      "answer": "A character vector: `c(\"1\", \"2\")`.",
+      "explanation": "Character is the common type when numeric and character values are combined in an atomic vector."
+    },
+    {
+      "id": "vectors_001",
+      "category": "vectors",
+      "prompt": "Which base R function combines `1`, `4`, and `9` into one vector?",
+      "answer": "`c(1, 4, 9)`.",
+      "explanation": "`c()` combines its arguments into a vector."
+    },
+    {
+      "id": "vectors_002",
+      "category": "vectors",
+      "prompt": "What vector is created by `2:5`?",
+      "answer": "`c(2, 3, 4, 5)`.",
+      "explanation": "The colon operator creates an inclusive integer sequence."
+    },
+    {
+      "id": "vectors_003",
+      "category": "vectors",
+      "prompt": "What does `seq(0, 1, by = 0.5)` return?",
+      "answer": "`c(0, 0.5, 1)`.",
+      "explanation": "`by` specifies the increment between sequence values."
+    },
+    {
+      "id": "vectors_004",
+      "category": "vectors",
+      "prompt": "What does `rep(c(\"A\", \"B\"), times = 2)` return?",
+      "answer": "`c(\"A\", \"B\", \"A\", \"B\")`.",
+      "explanation": "`times` repeats the complete input vector."
+    },
+    {
+      "id": "vectors_005",
+      "category": "vectors",
+      "prompt": "What does `rep(c(\"A\", \"B\"), each = 2)` return?",
+      "answer": "`c(\"A\", \"A\", \"B\", \"B\")`.",
+      "explanation": "`each` repeats each element before moving to the next."
+    },
+    {
+      "id": "vectors_006",
+      "category": "vectors",
+      "prompt": "What is `length(c(8, 6, 7))`?",
+      "answer": "`3`.",
+      "explanation": "`length()` counts vector elements."
+    },
+    {
+      "id": "vectors_007",
+      "category": "vectors",
+      "prompt": "What does `c(1, 2, 3) + 10` return?",
+      "answer": "`c(11, 12, 13)`.",
+      "explanation": "Arithmetic is vectorized, and the length-one value is reused for every element."
+    },
+    {
+      "id": "vectors_010",
+      "category": "vectors",
+      "prompt": "What is `sum(c(TRUE, FALSE, TRUE))`?",
+      "answer": "`2`.",
+      "explanation": "In numeric aggregation, `TRUE` is coerced to 1 and `FALSE` to 0."
+    },
+    {
+      "id": "vectors_011",
+      "category": "vectors",
+      "prompt": "What does `any(c(FALSE, TRUE, FALSE))` return?",
+      "answer": "`TRUE`.",
+      "explanation": "`any()` is true when at least one element is true."
+    },
+    {
+      "id": "vectors_012",
+      "category": "vectors",
+      "prompt": "What does `all(c(TRUE, TRUE, FALSE))` return?",
+      "answer": "`FALSE`.",
+      "explanation": "`all()` is true only when every element is true."
+    },
+    {
+      "id": "subsetting_001",
+      "category": "subsetting",
+      "prompt": "R uses one-based indexing. What does `c(10, 20, 30)[1]` return?",
+      "answer": "`10`.",
+      "explanation": "Position 1 is the first element in R."
+    },
+    {
+      "id": "subsetting_002",
+      "category": "subsetting",
+      "prompt": "What does `c(10, 20, 30)[-2]` return?",
+      "answer": "`c(10, 30)`.",
+      "explanation": "Negative indices exclude the specified positions."
+    },
+    {
+      "id": "subsetting_003",
+      "category": "subsetting",
+      "prompt": "If `x <- c(1, 4, 2, 7)`, what does `x[x > 3]` return?",
+      "answer": "`c(4, 7)`.",
+      "explanation": "A logical condition can select the elements where it is true."
+    },
+    {
+      "id": "subsetting_004",
+      "category": "subsetting",
+      "prompt": "If `x <- c(a = 10, b = 20)`, what does `x[\"b\"]` return?",
+      "answer": "The named length-one vector `c(b = 20)`.",
+      "explanation": "Single brackets preserve the selected element's name."
+    },
+    {
+      "id": "subsetting_005",
+      "category": "subsetting",
+      "prompt": "If `x <- c(a = 10, b = 20)`, what does `x[[\"b\"]]` return?",
+      "answer": "The scalar value `20` without the element name.",
+      "explanation": "Double brackets extract one element and drop its name wrapper."
+    },
+    {
+      "id": "subsetting_006",
+      "category": "subsetting",
+      "prompt": "What does `c(10, 20, 30)[c(3, 1)]` return?",
+      "answer": "`c(30, 10)`.",
+      "explanation": "A vector of positions selects and orders elements in the requested order."
+    },
+    {
+      "id": "subsetting_007",
+      "category": "subsetting",
+      "prompt": "What does `c(5, 6)[0]` return?",
+      "answer": "An empty numeric vector, `numeric(0)`.",
+      "explanation": "Index zero selects no elements."
+    },
+    {
+      "id": "subsetting_008",
+      "category": "subsetting",
+      "prompt": "What does `c(5, 6)[4]` return?",
+      "answer": "`NA`.",
+      "explanation": "Positive vector indices beyond the vector length produce missing values."
+    },
+    {
+      "id": "subsetting_009",
+      "category": "subsetting",
+      "prompt": "What does `c(5, 6, 7)[c(TRUE, NA, FALSE)]` return?",
+      "answer": "`c(5, NA)`.",
+      "explanation": "`TRUE` selects, `FALSE` omits, and an unknown selection produces an unknown element."
+    },
+    {
+      "id": "subsetting_010",
+      "category": "subsetting",
+      "prompt": "If `x <- c(1, 4, 2, 7)`, what does `which(x > 3)` return?",
+      "answer": "`c(2, 4)`.",
+      "explanation": "`which()` converts true logical positions to integer indices."
+    },
+    {
+      "id": "subsetting_011",
+      "category": "subsetting",
+      "prompt": "If `m <- matrix(1:6, nrow = 2)`, what is `m[2, 3]`?",
+      "answer": "`6`.",
+      "explanation": "Matrices use `[row, column]`, and `matrix()` fills by columns by default."
+    },
+    {
+      "id": "subsetting_012",
+      "category": "subsetting",
+      "prompt": "How do you select the first row of matrix `m` while preserving a one-row matrix?",
+      "answer": "`m[1, , drop = FALSE]`.",
+      "explanation": "`drop = FALSE` prevents R from simplifying the result to a vector."
+    },
+    {
+      "id": "subsetting_013",
+      "category": "subsetting",
+      "prompt": "For data frame `df`, what is the main return-type difference between `df[\"gene\"]` and `df[[\"gene\"]]`?",
+      "answer": "`df[\"gene\"]` returns a one-column data frame; `df[[\"gene\"]]` returns the column vector.",
+      "explanation": "Single brackets select a data-frame subset, while double brackets extract one component."
+    },
+    {
+      "id": "subsetting_014",
+      "category": "subsetting",
+      "prompt": "What expression returns vector `x` without its last element?",
+      "answer": "`x[-length(x)]`.",
+      "explanation": "The negative last position excludes that element."
+    },
+    {
+      "id": "control_010",
+      "category": "subsetting",
+      "prompt": "What does the infix operator `%in%` return?",
+      "answer": "A logical vector indicating whether each left-hand value occurs in the right-hand table.",
+      "explanation": "It is a convenient vectorized membership test."
+    },
+    {
+      "id": "subsetting_015",
+      "category": "subsetting",
+      "prompt": "Why use `counts[genes, cells, drop = FALSE]` instead of `counts[genes, cells]` when either index might select one row or column?",
+      "answer": "To guarantee that the result remains matrix-like rather than simplifying to a vector.",
+      "explanation": "Preserving two dimensions prevents downstream matrix code from changing behavior on one-row or one-column subsets."
+    },
+    {
+      "id": "containers_001",
+      "category": "containers",
+      "prompt": "By default, does `matrix(1:6, nrow = 2)` fill the matrix by rows or by columns?",
+      "answer": "By columns.",
+      "explanation": "Set `byrow = TRUE` to fill across rows instead."
+    },
+    {
+      "id": "containers_002",
+      "category": "containers",
+      "prompt": "Which function returns the dimensions of a matrix or array?",
+      "answer": "`dim()`.",
+      "explanation": "It returns an integer vector containing each dimension length."
+    },
+    {
+      "id": "containers_003",
+      "category": "containers",
+      "prompt": "Which two functions return a matrix's row and column counts separately?",
+      "answer": "`nrow()` and `ncol()`.",
+      "explanation": "They provide the first and second matrix dimensions."
+    },
+    {
+      "id": "containers_004",
+      "category": "containers",
+      "prompt": "Which base R function transposes matrix `m`?",
+      "answer": "`t(m)`.",
+      "explanation": "Transposition swaps rows and columns."
+    },
+    {
+      "id": "containers_005",
+      "category": "containers",
+      "prompt": "What is the distinction between `m * n` and `m %*% n` for compatible matrices?",
+      "answer": "`*` multiplies elementwise; `%*%` performs matrix multiplication.",
+      "explanation": "The operations have different dimension requirements and meanings."
+    },
+    {
+      "id": "containers_006",
+      "category": "containers",
+      "prompt": "Which optimized base R function computes the sum of each row of matrix `m`?",
+      "answer": "`rowSums(m)`.",
+      "explanation": "`rowSums()` avoids a general `apply()` call for this common operation."
+    },
+    {
+      "id": "containers_007",
+      "category": "containers",
+      "prompt": "Why can an R list hold `1`, `\"A\"`, and another vector without coercing them to one atomic type?",
+      "answer": "A list stores separate objects as elements, so its elements may have different types and lengths.",
+      "explanation": "This differs from an atomic vector, which has one common type."
+    },
+    {
+      "id": "containers_008",
+      "category": "containers",
+      "prompt": "If `x <- list(10, 20)`, what is the return-type difference between `x[2]` and `x[[2]]`?",
+      "answer": "`x[2]` returns a one-element list; `x[[2]]` returns the value `20`.",
+      "explanation": "Single brackets subset a list, while double brackets extract an element."
+    },
+    {
+      "id": "containers_009",
+      "category": "containers",
+      "prompt": "If `x <- list(score = 9)`, which shorthand extracts the `score` element?",
+      "answer": "`x$score`.",
+      "explanation": "The dollar operator extracts a named list or data-frame component."
+    },
+    {
+      "id": "containers_010",
+      "category": "containers",
+      "prompt": "What happens to `x$a` after `x$a <- NULL` when `x` is a list?",
+      "answer": "The `a` element is removed from the list.",
+      "explanation": "Assigning `NULL` deletes a list component rather than storing a missing value."
+    },
+    {
+      "id": "containers_011",
+      "category": "containers",
+      "prompt": "At a high level, what does the R class name `dgCMatrix` describe?",
+      "answer": "A double-precision sparse matrix stored in compressed-column form.",
+      "explanation": "This common `Matrix` class stores only nonzero entries and related indices instead of a full dense matrix."
+    },
+    {
+      "id": "containers_012",
+      "category": "containers",
+      "prompt": "What can `unlist(list(1, \"A\"))` return after atomic coercion?",
+      "answer": "The character vector `c(\"1\", \"A\")`.",
+      "explanation": "`unlist()` flattens compatible list content and chooses a common atomic type."
+    },
+    {
+      "id": "containers_013",
+      "category": "containers",
+      "prompt": "For a genes-by-samples count matrix, what does `Matrix::colSums(counts)` return?",
+      "answer": "One column sum per sample.",
+      "explanation": "The `Matrix` method works efficiently for both dense and supported sparse matrices."
+    },
+    {
+      "id": "containers_014",
+      "category": "containers",
+      "prompt": "Why can `as.matrix(sparse_counts)` be dangerous for a large sparse count matrix?",
+      "answer": "It creates a dense matrix that may require far more memory.",
+      "explanation": "Sparse matrices save space by not storing every zero explicitly; dense conversion loses that advantage."
+    },
+    {
+      "id": "data_frames_001",
+      "category": "data_frames",
+      "prompt": "What kind of object does `data.frame(gene = c(\"A\", \"B\"), count = c(3, 5))` create?",
+      "answer": "A data frame with two rows and two columns.",
+      "explanation": "Each named argument becomes a column, and equal-length elements align by row."
+    },
+    {
+      "id": "data_frames_002",
+      "category": "data_frames",
+      "prompt": "How many rows does `data.frame(x = 1:3, y = 5)` have?",
+      "answer": "`3` rows.",
+      "explanation": "The length-one value in `y` is recycled to match the three-row column."
+    },
+    {
+      "id": "data_frames_003",
+      "category": "data_frames",
+      "prompt": "Which function returns the number of rows in data frame `df`?",
+      "answer": "`nrow(df)`.",
+      "explanation": "`nrow()` returns the first dimension."
+    },
+    {
+      "id": "data_frames_004",
+      "category": "data_frames",
+      "prompt": "Which function returns the number of columns in data frame `df`?",
+      "answer": "`ncol(df)`.",
+      "explanation": "`ncol()` returns the second dimension."
+    },
+    {
+      "id": "data_frames_005",
+      "category": "data_frames",
+      "prompt": "Which expression returns a data frame's column names?",
+      "answer": "`names(df)` or `colnames(df)`.",
+      "explanation": "For a data frame, both expose its column names."
+    },
+    {
+      "id": "data_frames_006",
+      "category": "data_frames",
+      "prompt": "What is `str(df)` mainly used to inspect?",
+      "answer": "The data frame's compact structure, including column names, types, and sample values.",
+      "explanation": "It is a quick diagnostic for object structure rather than a transformation."
+    },
+    {
+      "id": "data_frames_007",
+      "category": "data_frames",
+      "prompt": "How do you add a column equal to the log2 of `df$count`?",
+      "answer": "`df$log_count <- log2(df$count)`.",
+      "explanation": "Assigning to a new dollar-name creates or replaces that column."
+    },
+    {
+      "id": "data_frames_008",
+      "category": "data_frames",
+      "prompt": "What base R expression keeps rows of `df` where `count > 10`?",
+      "answer": "`df[df$count > 10, ]`.",
+      "explanation": "The logical condition occupies the row position before the comma."
+    },
+    {
+      "id": "data_frames_009",
+      "category": "data_frames",
+      "prompt": "What base R expression selects the `gene` and `count` columns of `df` as a data frame?",
+      "answer": "`df[c(\"gene\", \"count\")]`.",
+      "explanation": "A character vector inside single brackets selects those columns and preserves a data frame."
+    },
+    {
+      "id": "data_frames_010",
+      "category": "data_frames",
+      "prompt": "How do you sort `df` rows by `score` from largest to smallest using base R?",
+      "answer": "`df[order(df$score, decreasing = TRUE), ]`.",
+      "explanation": "`order()` returns the row positions in the requested sort order."
+    },
+    {
+      "id": "data_frames_011",
+      "category": "data_frames",
+      "prompt": "Which base R function identifies rows with no missing values in any selected column?",
+      "answer": "`complete.cases()`.",
+      "explanation": "It returns one logical value per row."
+    },
+    {
+      "id": "data_frames_012",
+      "category": "data_frames",
+      "prompt": "What does `rowSums(is.na(df))` calculate?",
+      "answer": "The number of missing cells in each row.",
+      "explanation": "`is.na(df)` marks missing cells, and logical `TRUE` values sum as one."
+    },
+    {
+      "id": "data_frames_013",
+      "category": "data_frames",
+      "prompt": "Which base R function stacks data frames with compatible columns by adding rows?",
+      "answer": "`rbind()`.",
+      "explanation": "Row binding appends observations vertically."
+    },
+    {
+      "id": "data_frames_014",
+      "category": "data_frames",
+      "prompt": "Which base R function combines objects side by side by adding columns?",
+      "answer": "`cbind()`.",
+      "explanation": "Column binding aligns values by row position."
+    },
+    {
+      "id": "data_frames_015",
+      "category": "data_frames",
+      "prompt": "How do you select only the first row of `df` while guaranteeing a data-frame result?",
+      "answer": "`df[1, , drop = FALSE]`.",
+      "explanation": "`drop = FALSE` explicitly prevents dimension simplification."
+    },
+    {
+      "id": "data_frames_016",
+      "category": "data_frames",
+      "prompt": "When `tbl` is a tibble, what does `tbl[\"gene\"]` return?",
+      "answer": "A one-column tibble.",
+      "explanation": "Single-bracket subsetting preserves tibble structure."
+    },
+    {
+      "id": "fundamentals_001",
+      "category": "functions_control",
+      "prompt": "What is the conventional R assignment operator in `x <- 5`?",
+      "answer": "`<-`.",
+      "explanation": "`=` can assign in many contexts, but `<-` is the conventional general assignment operator in R code."
+    },
+    {
+      "id": "functions_001",
+      "category": "functions_control",
+      "prompt": "Fill in the function definition: `square <- ___(x) x^2`.",
+      "answer": "`function`, giving `square <- function(x) x^2`.",
+      "explanation": "R functions are objects created with `function(...)`."
+    },
+    {
+      "id": "functions_003",
+      "category": "functions_control",
+      "prompt": "If an R function has no explicit `return()`, what value does it return?",
+      "answer": "The value of its last evaluated expression.",
+      "explanation": "Explicit `return()` is optional for the final result."
+    },
+    {
+      "id": "functions_005",
+      "category": "functions_control",
+      "prompt": "In `f <- function(x, scale = 2) x * scale`, what is `f(3)`?",
+      "answer": "`6`.",
+      "explanation": "The omitted `scale` argument uses its default value of two."
+    },
+    {
+      "id": "functions_006",
+      "category": "functions_control",
+      "prompt": "How can you call `f <- function(x, scale) x * scale` using named arguments in reverse order?",
+      "answer": "For example, `f(scale = 2, x = 3)`.",
+      "explanation": "Exact argument names allow call order to differ from the function signature."
+    },
+    {
+      "id": "functions_007",
+      "category": "functions_control",
+      "prompt": "What does `...` allow a function to accept?",
+      "answer": "Additional arguments that can be forwarded or handled inside the function.",
+      "explanation": "Wrapper functions commonly pass `...` to another function."
+    },
+    {
+      "id": "functions_013",
+      "category": "functions_control",
+      "prompt": "What does `match.arg(method, c(\"mean\", \"median\"))` help a function do?",
+      "answer": "Validate and match `method` against the allowed choices.",
+      "explanation": "It returns a matching choice or raises an informative error."
+    },
+    {
+      "id": "functions_014",
+      "category": "functions_control",
+      "prompt": "Which base R function deliberately raises an error with a message?",
+      "answer": "`stop()`.",
+      "explanation": "Execution stops unless the error is caught."
+    },
+    {
+      "id": "functions_015",
+      "category": "functions_control",
+      "prompt": "Which base R function emits a warning while normally allowing execution to continue?",
+      "answer": "`warning()`.",
+      "explanation": "Warnings signal a problem without necessarily aborting the call."
+    },
+    {
+      "id": "control_001",
+      "category": "functions_control",
+      "prompt": "What operator tests ordinary elementwise equality in R?",
+      "answer": "`==`.",
+      "explanation": "A single `=` is not the equality-comparison operator."
+    },
+    {
+      "id": "control_002",
+      "category": "functions_control",
+      "prompt": "What is the difference between `&` and `&&`?",
+      "answer": "`&` compares elementwise; `&&` uses only the first element of each side and short-circuits.",
+      "explanation": "`&&` is suited to scalar conditions in `if` and `while`."
+    },
+    {
+      "id": "control_004",
+      "category": "functions_control",
+      "prompt": "Why is `if (x > 0)` inappropriate when `x` is a multi-element vector?",
+      "answer": "`if` requires one non-missing logical condition, not an elementwise vector of conditions.",
+      "explanation": "Use vectorized logic such as `ifelse()` or subset by a logical vector when appropriate."
+    },
+    {
+      "id": "control_005",
+      "category": "functions_control",
+      "prompt": "What values does `for (i in 1:3) print(i)` iterate over?",
+      "answer": "`1`, `2`, and `3`.",
+      "explanation": "The loop variable takes each value of the sequence in order."
+    },
+    {
+      "id": "control_006",
+      "category": "functions_control",
+      "prompt": "Which loop keyword skips the remainder of the current iteration and continues with the next one?",
+      "answer": "`next`.",
+      "explanation": "`break` would leave the loop entirely."
+    },
+    {
+      "id": "control_009",
+      "category": "functions_control",
+      "prompt": "What is wrong with testing missingness using `if (x == NA)`?",
+      "answer": "The comparison returns `NA`, not `TRUE` or `FALSE`; use `if (is.na(x))`.",
+      "explanation": "A control-flow condition cannot be an unknown logical value."
+    },
+    {
+      "id": "functions_control_001",
+      "category": "functions_control",
+      "prompt": "What happens when an expression inside `stopifnot(...)` is not all `TRUE`?",
+      "answer": "Execution stops with an error.",
+      "explanation": "Package code often uses `stopifnot()` for compact internal assertions about types, lengths, or dimensions."
+    },
+    {
+      "id": "iteration_001",
+      "category": "iteration",
+      "prompt": "What type of object does `lapply(1:3, sqrt)` always return?",
+      "answer": "A list.",
+      "explanation": "`lapply()` applies a function to each element and preserves results in a list."
+    },
+    {
+      "id": "iteration_002",
+      "category": "iteration",
+      "prompt": "What extra behavior does `sapply()` attempt after performing an `lapply()`-like operation?",
+      "answer": "It attempts to simplify the list result to a vector, matrix, or array.",
+      "explanation": "The simplification can make return type less predictable than `vapply()`."
+    },
+    {
+      "id": "iteration_003",
+      "category": "iteration",
+      "prompt": "Why is `vapply(x, f, numeric(1))` safer than `sapply(x, f)` when one number is expected per element?",
+      "answer": "It enforces the declared numeric length-one return template.",
+      "explanation": "Unexpected result types or lengths cause an error instead of silent simplification changes."
+    },
+    {
+      "id": "iteration_004",
+      "category": "iteration",
+      "prompt": "In `apply(m, 1, mean)`, what does margin `1` mean?",
+      "answer": "Apply `mean` to each row.",
+      "explanation": "Margin 1 is rows and margin 2 is columns."
+    },
+    {
+      "id": "iteration_005",
+      "category": "iteration",
+      "prompt": "In `apply(m, 2, mean)`, what does margin `2` mean?",
+      "answer": "Apply `mean` to each column.",
+      "explanation": "The margin identifies which dimension is retained across calls."
+    },
+    {
+      "id": "iteration_006",
+      "category": "iteration",
+      "prompt": "What does `tapply(values, groups, mean)` compute?",
+      "answer": "The mean of `values` separately for each level or combination of `groups`.",
+      "explanation": "`tapply()` splits an atomic vector by grouping factors before applying the function."
+    },
+    {
+      "id": "iteration_007",
+      "category": "iteration",
+      "prompt": "What kind of object does `lapply(files, readRDS)` return?",
+      "answer": "A list with one returned object for each element of `files`.",
+      "explanation": "`lapply()` always returns a list, even if all loaded objects have the same type."
+    },
+    {
+      "id": "iteration_008",
+      "category": "iteration",
+      "prompt": "What does `vapply(samples, nrow, integer(1))` require each call to `nrow` to return?",
+      "answer": "Exactly one integer.",
+      "explanation": "`vapply()` checks every result against the declared `integer(1)` output shape and type."
+    },
+    {
+      "id": "iteration_009",
+      "category": "iteration",
+      "prompt": "What type of object does `purrr::map(x, f)` return?",
+      "answer": "A list.",
+      "explanation": "Typed variants such as `map_dbl()` request a more specific output type."
+    },
+    {
+      "id": "iteration_010",
+      "category": "iteration",
+      "prompt": "What output contract does `purrr::map_dbl(x, f)` impose?",
+      "answer": "Each call must produce one value coercible to double, and the overall result is a double vector.",
+      "explanation": "It fails rather than silently returning a differently shaped list."
+    },
+    {
+      "id": "dplyr_001",
+      "category": "dplyr",
+      "prompt": "Which dplyr verb selects columns by name?",
+      "answer": "`select()`.",
+      "explanation": "For example, `select(df, gene, count)` keeps those columns."
+    },
+    {
+      "id": "dplyr_002",
+      "category": "dplyr",
+      "prompt": "Which dplyr verb keeps rows satisfying conditions?",
+      "answer": "`filter()`.",
+      "explanation": "For example, `filter(df, count > 10)` keeps matching rows."
+    },
+    {
+      "id": "dplyr_003",
+      "category": "dplyr",
+      "prompt": "Which dplyr verb creates or replaces columns?",
+      "answer": "`mutate()`.",
+      "explanation": "It normally preserves the number of rows."
+    },
+    {
+      "id": "dplyr_004",
+      "category": "dplyr",
+      "prompt": "How do you sort rows by `score` from largest to smallest with dplyr?",
+      "answer": "`arrange(df, desc(score))`.",
+      "explanation": "`desc()` reverses the default ascending ordering."
+    },
+    {
+      "id": "dplyr_005",
+      "category": "dplyr",
+      "prompt": "Which dplyr verb reduces rows to summary values such as a mean?",
+      "answer": "`summarise()` or `summarize()`.",
+      "explanation": "Without grouping, it typically returns one summary row."
+    },
+    {
+      "id": "dplyr_006",
+      "category": "dplyr",
+      "prompt": "What does `df |> group_by(group) |> summarise(mean_x = mean(x))` return conceptually?",
+      "answer": "One summary row per `group`, containing that group's mean of `x`.",
+      "explanation": "`group_by()` changes the units over which `summarise()` operates."
+    },
+    {
+      "id": "dplyr_007",
+      "category": "dplyr",
+      "prompt": "What concise dplyr expression counts rows for each value of `group`?",
+      "answer": "`count(df, group)`.",
+      "explanation": "It is a shortcut for grouping by `group` and summarizing with `n()`."
+    },
+    {
+      "id": "dplyr_008",
+      "category": "dplyr",
+      "prompt": "Which dplyr verb keeps distinct rows or distinct combinations of selected columns?",
+      "answer": "`distinct()`.",
+      "explanation": "For example, `distinct(df, sample_id)` keeps one row per unique sample ID."
+    },
+    {
+      "id": "dplyr_009",
+      "category": "dplyr",
+      "prompt": "What is the dplyr syntax to rename column `old` to `new`?",
+      "answer": "`rename(df, new = old)`.",
+      "explanation": "The new name appears on the left and the existing name on the right."
+    },
+    {
+      "id": "dplyr_010",
+      "category": "dplyr",
+      "prompt": "Which dplyr verb extracts one column as a vector?",
+      "answer": "`pull()`.",
+      "explanation": "For example, `pull(df, gene)` returns the `gene` vector rather than a one-column data frame."
+    },
+    {
+      "id": "dplyr_011",
+      "category": "dplyr",
+      "prompt": "What does `summarise(df, across(where(is.numeric), ~ mean(.x, na.rm = TRUE)))` do?",
+      "answer": "It computes a missing-value-removed mean for every numeric column.",
+      "explanation": "`across()` applies the same function to a selected set of columns."
+    },
+    {
+      "id": "dplyr_012",
+      "category": "dplyr",
+      "prompt": "Which dplyr helper expresses several ordered vectorized conditions and results?",
+      "answer": "`case_when()`.",
+      "explanation": "Each formula has a condition on the left and a result on the right."
+    },
+    {
+      "id": "dplyr_015",
+      "category": "dplyr",
+      "prompt": "In `df |> filter(x > 0)`, where is `df` passed?",
+      "answer": "As the first argument to `filter()`.",
+      "explanation": "The base pipe passes its left-hand result into the next call."
+    },
+    {
+      "id": "dplyr_016",
+      "category": "dplyr",
+      "prompt": "What does `ungroup()` remove from a grouped data frame?",
+      "answer": "Its dplyr grouping metadata.",
+      "explanation": "Later verbs then operate on the full data rather than separately by the former groups."
+    },
+    {
+      "id": "joins_001",
+      "category": "joins_reshaping",
+      "prompt": "What rows does `inner_join(x, y, by = \"id\")` retain?",
+      "answer": "Rows whose `id` keys have matches in both `x` and `y`.",
+      "explanation": "Unmatched keys from either table are excluded."
+    },
+    {
+      "id": "joins_002",
+      "category": "joins_reshaping",
+      "prompt": "What rows does `left_join(x, y, by = \"id\")` guarantee to retain?",
+      "answer": "All rows from `x`.",
+      "explanation": "Matching columns from `y` are added, with missing values where no match exists."
+    },
+    {
+      "id": "joins_003",
+      "category": "joins_reshaping",
+      "prompt": "What does `full_join(x, y, by = \"id\")` retain?",
+      "answer": "All keys and rows from both tables, matching where possible.",
+      "explanation": "Unmatched fields from the other table are filled with missing values."
+    },
+    {
+      "id": "joins_004",
+      "category": "joins_reshaping",
+      "prompt": "What does `anti_join(x, y, by = \"id\")` return?",
+      "answer": "Rows of `x` whose `id` has no match in `y`.",
+      "explanation": "It is useful for finding unmatched or excluded records."
+    },
+    {
+      "id": "joins_005",
+      "category": "joins_reshaping",
+      "prompt": "What does `semi_join(x, y, by = \"id\")` return?",
+      "answer": "Rows of `x` whose `id` has at least one match in `y`, without adding columns from `y`.",
+      "explanation": "It filters `x` by key existence."
+    },
+    {
+      "id": "joins_006",
+      "category": "joins_reshaping",
+      "prompt": "How do you join `x$id` to `y$sample_id` using the older named-character `by` syntax?",
+      "answer": "Use `by = c(\"id\" = \"sample_id\")`.",
+      "explanation": "The left-table key name is on the left and the right-table key name is on the right."
+    },
+    {
+      "id": "joins_007",
+      "category": "joins_reshaping",
+      "prompt": "What can happen to row count when a join key appears multiple times in both tables?",
+      "answer": "The matching combinations can multiply rows in a many-to-many expansion.",
+      "explanation": "Duplicate keys should be checked when one-to-one or many-to-one matching was intended."
+    },
+    {
+      "id": "joins_008",
+      "category": "joins_reshaping",
+      "prompt": "Which tidyr verb converts several measurement columns into key-value rows?",
+      "answer": "`pivot_longer()`.",
+      "explanation": "It changes wide data into longer, typically tidier, form."
+    },
+    {
+      "id": "joins_009",
+      "category": "joins_reshaping",
+      "prompt": "Which tidyr verb spreads key-value rows into separate columns?",
+      "answer": "`pivot_wider()`.",
+      "explanation": "It is the inverse shape transformation of `pivot_longer()` when keys are unique."
+    },
+    {
+      "id": "joins_010",
+      "category": "joins_reshaping",
+      "prompt": "In `pivot_longer(df, cols = starts_with(\"sample_\"), names_to = \"sample\", values_to = \"value\")`, what do `names_to` and `values_to` name?",
+      "answer": "They name the new column holding former column names and the new column holding their cell values.",
+      "explanation": "The selected wide columns are gathered into those two long-form columns."
+    },
+    {
+      "id": "strings_002",
+      "category": "strings_io",
+      "prompt": "What does `paste0(\"sample_\", 1:2)` return?",
+      "answer": "`c(\"sample_1\", \"sample_2\")`.",
+      "explanation": "`paste0()` concatenates with an empty separator."
+    },
+    {
+      "id": "strings_004",
+      "category": "strings_io",
+      "prompt": "What does `paste(c(\"A\", \"B\", \"C\"), collapse = \",\")` return?",
+      "answer": "The single string `\"A,B,C\"`.",
+      "explanation": "`collapse` combines multiple vector elements into one output string."
+    },
+    {
+      "id": "strings_006",
+      "category": "strings_io",
+      "prompt": "What does `grepl(\"^A\", c(\"ATG\", \"CAT\"))` return?",
+      "answer": "`c(TRUE, FALSE)`.",
+      "explanation": "`grepl()` returns logical matches, and `^` anchors the pattern to the start."
+    },
+    {
+      "id": "strings_008",
+      "category": "strings_io",
+      "prompt": "What is the difference between `sub()` and `gsub()`?",
+      "answer": "`sub()` replaces the first match in each string; `gsub()` replaces all matches.",
+      "explanation": "Both accept a pattern, replacement, and character input."
+    },
+    {
+      "id": "strings_009",
+      "category": "strings_io",
+      "prompt": "In a regular expression, what do `^` and `$` anchor?",
+      "answer": "`^` anchors the start of a string and `$` anchors the end.",
+      "explanation": "Anchors constrain where a match may occur."
+    },
+    {
+      "id": "strings_010",
+      "category": "strings_io",
+      "prompt": "What R regex string matches a literal period rather than any character?",
+      "answer": "`\"\\\\.\"`.",
+      "explanation": "The regex needs `\\.` and the R string literal must escape that backslash, producing `\"\\\\.\"`."
+    },
+    {
+      "id": "io_001",
+      "category": "strings_io",
+      "prompt": "Which base R function reads a comma-separated file into a data frame?",
+      "answer": "`read.csv()`.",
+      "explanation": "It is a comma-delimited convenience wrapper around `read.table()`."
+    },
+    {
+      "id": "io_003",
+      "category": "strings_io",
+      "prompt": "Which pair saves one R object to a file and reads it back as a returned value?",
+      "answer": "`saveRDS()` and `readRDS()`.",
+      "explanation": "The object can be assigned a new name when it is read back."
+    },
+    {
+      "id": "io_005",
+      "category": "strings_io",
+      "prompt": "What does `source(\"analysis.R\")` do?",
+      "answer": "It parses and evaluates the R code in `analysis.R`.",
+      "explanation": "Sourcing is used to run a script or load definitions into the current session."
+    },
+    {
+      "id": "io_006",
+      "category": "strings_io",
+      "prompt": "What does `library(dplyr)` do in an R session?",
+      "answer": "It attaches the installed `dplyr` package so its exported functions can be called without a namespace prefix.",
+      "explanation": "Installing and attaching a package are separate operations."
+    },
+    {
+      "id": "io_007",
+      "category": "strings_io",
+      "prompt": "What does `dplyr::filter` mean without calling `library(dplyr)`?",
+      "answer": "Use the exported `filter` function from the `dplyr` namespace.",
+      "explanation": "The `::` operator names the package explicitly."
+    },
+    {
+      "id": "io_008",
+      "category": "strings_io",
+      "prompt": "Why use `file.path(project_dir, \"results\", \"counts.csv\")` instead of manually pasting path separators?",
+      "answer": "It constructs a platform-appropriate path from components.",
+      "explanation": "`file.path()` avoids hard-coding Windows or Unix separators and makes path intent clearer."
+    },
+    {
+      "id": "factors_001",
+      "category": "factors_design",
+      "prompt": "What are `levels(factor(c(\"b\", \"a\", \"b\")))` by default?",
+      "answer": "`c(\"a\", \"b\")`.",
+      "explanation": "Without an explicit `levels` argument, factor levels are sorted from the unique values."
+    },
+    {
+      "id": "factors_002",
+      "category": "factors_design",
+      "prompt": "Why is `as.numeric(factor(c(\"10\", \"20\")))` usually not the desired numeric conversion?",
+      "answer": "It returns the internal level codes, not the numeric labels.",
+      "explanation": "Convert through character labels when their text represents numbers."
+    },
+    {
+      "id": "factors_003",
+      "category": "factors_design",
+      "prompt": "How do you safely convert factor `f` with numeric-looking labels to those numeric values?",
+      "answer": "`as.numeric(as.character(f))`.",
+      "explanation": "The character step retrieves the labels before numeric parsing."
+    },
+    {
+      "id": "factors_004",
+      "category": "factors_design",
+      "prompt": "Which function drops factor levels that are no longer represented after filtering?",
+      "answer": "`droplevels()`.",
+      "explanation": "Subsetting a factor does not automatically discard unused levels."
+    },
+    {
+      "id": "factors_005",
+      "category": "factors_design",
+      "prompt": "What does `relevel(group, ref = \"control\")` do?",
+      "answer": "It moves `control` to the first, reference level of factor `group`.",
+      "explanation": "Model contrasts commonly use the first level as the baseline."
+    },
+    {
+      "id": "factors_006",
+      "category": "factors_design",
+      "prompt": "What extra meaning does `ordered(c(\"low\", \"high\"), levels = c(\"low\", \"high\"))` add compared with an unordered factor?",
+      "answer": "It records an ordering among the levels, allowing ordered comparisons and ordered-factor treatment.",
+      "explanation": "The supplied level order defines the category ranking."
+    },
+    {
+      "id": "factors_007",
+      "category": "factors_design",
+      "prompt": "How can `table(x)` be told to include missing values when any are present?",
+      "answer": "`table(x, useNA = \"ifany\")`.",
+      "explanation": "The `useNA` argument controls whether missing values appear as a table category."
+    },
+    {
+      "id": "factors_008",
+      "category": "factors_design",
+      "prompt": "Which function returns the number of levels in factor `f`?",
+      "answer": "`nlevels(f)`.",
+      "explanation": "It counts defined levels, including levels currently unused by observations."
+    },
+    {
+      "id": "design_001",
+      "category": "factors_design",
+      "prompt": "In a differential-expression design, what does `~ batch + condition` represent?",
+      "answer": "A model with additive batch and condition terms.",
+      "explanation": "The condition effect is estimated while accounting for batch; this formula does not include a batch-by-condition interaction."
+    },
+    {
+      "id": "design_002",
+      "category": "factors_design",
+      "prompt": "What terms does the formula `~ genotype * treatment` include?",
+      "answer": "Genotype, treatment, and their interaction.",
+      "explanation": "In an R formula, `a * b` expands to `a + b + a:b`."
+    },
+    {
+      "id": "design_003",
+      "category": "factors_design",
+      "prompt": "What kind of object does `model.matrix(~ group, data = metadata)` create?",
+      "answer": "A numeric design matrix encoding the model terms.",
+      "explanation": "Rows correspond to observations and columns encode the intercept and group coefficients according to the factor contrasts."
+    },
+    {
+      "id": "design_004",
+      "category": "factors_design",
+      "prompt": "Why call `droplevels(metadata$group)` after subsetting samples?",
+      "answer": "To remove factor levels that no longer have observations.",
+      "explanation": "Unused levels can create confusing design-matrix columns or rank problems in downstream modeling."
+    },
+    {
+      "id": "objects_001",
+      "category": "object_systems",
+      "prompt": "What does `class(x)` help you determine when reading unfamiliar R code?",
+      "answer": "Which class or classes control how generic functions treat `x`.",
+      "explanation": "Class information helps explain method dispatch, printed output, and available accessors."
+    },
+    {
+      "id": "objects_002",
+      "category": "object_systems",
+      "prompt": "What does `inherits(x, \"SummarizedExperiment\")` test?",
+      "answer": "Whether `x` inherits from the `SummarizedExperiment` class.",
+      "explanation": "Unlike comparing one class string, `inherits()` also recognizes parent classes."
+    },
+    {
+      "id": "objects_003",
+      "category": "object_systems",
+      "prompt": "By R's S3 naming convention, what object class is targeted by a method named `print.DGEList`?",
+      "answer": "`DGEList`.",
+      "explanation": "An S3 method is commonly named `generic.class`, so `print.DGEList` handles printing `DGEList` objects."
+    },
+    {
+      "id": "objects_004",
+      "category": "object_systems",
+      "prompt": "What does `UseMethod(\"plot\")` do inside an S3 generic?",
+      "answer": "It dispatches to a `plot` method based on the class of the relevant object.",
+      "explanation": "The selected method might be `plot.default`, `plot.someClass`, or another registered method."
+    },
+    {
+      "id": "objects_005",
+      "category": "object_systems",
+      "prompt": "What does `methods::setClass(\"Example\", slots = ...)` define?",
+      "answer": "An S4 class and its declared slots.",
+      "explanation": "S4 classes have formal definitions that package code can validate and dispatch on."
+    },
+    {
+      "id": "objects_006",
+      "category": "object_systems",
+      "prompt": "What does `setMethod(\"show\", \"Example\", function(object) ...)` define?",
+      "answer": "The `show` method for objects of class `Example`.",
+      "explanation": "S4 dispatch selects this implementation when the generic is called for that signature."
+    },
+    {
+      "id": "objects_007",
+      "category": "object_systems",
+      "prompt": "What is a generic function in R?",
+      "answer": "A function that selects a class-specific method rather than containing one implementation for every class.",
+      "explanation": "Generics let the same call, such as `plot()` or `show()`, behave appropriately for different object classes."
+    },
+    {
+      "id": "objects_008",
+      "category": "object_systems",
+      "prompt": "In `object@data`, what does `@` indicate?",
+      "answer": "Direct access to an S4 slot named `data`.",
+      "explanation": "Recognize this syntax when reading package internals, although public accessor functions are usually safer for analysis code."
+    },
+    {
+      "id": "objects_009",
+      "category": "object_systems",
+      "prompt": "What does `slot(object, \"data\")` retrieve?",
+      "answer": "The S4 slot named `data`.",
+      "explanation": "It is the function form of direct slot access and uses the slot name as a character string."
+    },
+    {
+      "id": "objects_010",
+      "category": "object_systems",
+      "prompt": "For a `SummarizedExperiment` named `se`, what does `assay(se)` normally return?",
+      "answer": "An assay matrix or matrix-like object.",
+      "explanation": "Its rows are features and its columns are samples or cells."
+    },
+    {
+      "id": "objects_011",
+      "category": "object_systems",
+      "prompt": "What does `assays(se)[[\"counts\"]]` extract?",
+      "answer": "The assay named `counts` from the assay collection.",
+      "explanation": "`assays(se)` is list-like, and `[[` extracts the selected matrix-like element."
+    },
+    {
+      "id": "objects_012",
+      "category": "object_systems",
+      "prompt": "In a `SummarizedExperiment`, what does `colData(se)` describe?",
+      "answer": "Metadata for the assay columns, usually samples or cells.",
+      "explanation": "Each row of `colData(se)` corresponds to one assay column."
+    },
+    {
+      "id": "objects_013",
+      "category": "object_systems",
+      "prompt": "In a `SummarizedExperiment`, what does `rowData(se)` describe?",
+      "answer": "Metadata for the assay rows, usually genes or genomic features.",
+      "explanation": "Each row of `rowData(se)` corresponds to one assay row."
+    },
+    {
+      "id": "objects_014",
+      "category": "object_systems",
+      "prompt": "What alignment should normally hold between `rownames(colData(se))` and `colnames(assay(se))`?",
+      "answer": "They should identify the same samples or cells in the same order.",
+      "explanation": "Misalignment can associate measurements with the wrong metadata and is rejected by many constructors."
+    },
+    {
+      "id": "objects_015",
+      "category": "object_systems",
+      "prompt": "For a DESeq2 dataset `dds`, what does `counts(dds)` return?",
+      "answer": "Its genes-by-samples count matrix.",
+      "explanation": "The accessor exposes assay data without requiring direct knowledge of internal S4 slots."
+    },
+    {
+      "id": "objects_016",
+      "category": "object_systems",
+      "prompt": "What does `reducedDims(sce)[[\"PCA\"]]` extract from a `SingleCellExperiment`?",
+      "answer": "The reduced-dimension matrix named `PCA`.",
+      "explanation": "Rows usually correspond to cells and columns to principal components."
+    },
+    {
+      "id": "objects_017",
+      "category": "object_systems",
+      "prompt": "For a `GRanges` object `gr`, what does `seqnames(gr)` return?",
+      "answer": "The sequence or chromosome name associated with each range.",
+      "explanation": "It is an accessor for one parallel component of the genomic ranges."
+    },
+    {
+      "id": "objects_018",
+      "category": "object_systems",
+      "prompt": "For a `GRanges` object `gr`, what does `ranges(gr)` return?",
+      "answer": "The start-and-width interval component of the genomic ranges.",
+      "explanation": "Sequence names and strand information are stored as separate parallel components."
+    },
+    {
+      "id": "objects_019",
+      "category": "object_systems",
+      "prompt": "In common Seurat code, what does `object[[\"RNA\"]]` request?",
+      "answer": "The named `RNA` component, commonly the RNA assay.",
+      "explanation": "Seurat overloads `[[` for object-aware extraction, so method dispatch determines the exact behavior."
+    },
+    {
+      "id": "objects_020",
+      "category": "object_systems",
+      "prompt": "Why can printing an S4 object call a class-specific `show` method without an explicit `show.ClassName()` call?",
+      "answer": "S4 method dispatch selects the method from the object's class signature.",
+      "explanation": "The generic call stays the same while the implementation varies by class."
+    },
+    {
+      "id": "ggplot2_001",
+      "category": "ggplot2",
+      "prompt": "In `ggplot(df, aes(x = age, y = score))`, what does `aes()` define?",
+      "answer": "Mappings from data variables to plot aesthetics such as x and y.",
+      "explanation": "Layers can inherit these mappings from the plot object."
+    },
+    {
+      "id": "ggplot2_002",
+      "category": "ggplot2",
+      "prompt": "Which ggplot2 layer creates a scatter plot?",
+      "answer": "`geom_point()`.",
+      "explanation": "Each observation is drawn as a point using mapped aesthetics."
+    },
+    {
+      "id": "ggplot2_003",
+      "category": "ggplot2",
+      "prompt": "Which operator normally adds a layer to a ggplot object?",
+      "answer": "`+`.",
+      "explanation": "For example, `ggplot(...) + geom_point()` builds the plot layer by layer."
+    },
+    {
+      "id": "ggplot2_004",
+      "category": "ggplot2",
+      "prompt": "What is the difference between `aes(color = group)` and `color = \"blue\"` outside `aes()`?",
+      "answer": "Inside `aes()`, color is mapped to the `group` variable; outside it, all marks get the fixed color blue.",
+      "explanation": "Mapped aesthetics usually create a scale and legend, while fixed settings do not map data."
+    },
+    {
+      "id": "ggplot2_005",
+      "category": "ggplot2",
+      "prompt": "Which ggplot2 function makes separate panels for levels of one variable using a formula like `~ group`?",
+      "answer": "`facet_wrap(~ group)`.",
+      "explanation": "Faceting repeats the same plot structure across subsets."
+    },
+    {
+      "id": "ggplot2_006",
+      "category": "ggplot2",
+      "prompt": "Which ggplot2 layer draws boxplots?",
+      "answer": "`geom_boxplot()`.",
+      "explanation": "It summarizes distributions using quartiles, whiskers, and potential outliers."
+    },
+    {
+      "id": "ggplot2_007",
+      "category": "ggplot2",
+      "prompt": "Which ggplot2 layer draws a histogram, and which argument directly sets bin width?",
+      "answer": "`geom_histogram(binwidth = ...)`.",
+      "explanation": "The bin width controls the numeric span summarized by each bar."
+    },
+    {
+      "id": "ggplot2_008",
+      "category": "ggplot2",
+      "prompt": "How can you set a ggplot title and x-axis label in one layer?",
+      "answer": "For example, `labs(title = \"Title\", x = \"Age\")`.",
+      "explanation": "`labs()` sets plot and aesthetic labels."
+    },
+    {
+      "id": "ggplot2_009",
+      "category": "ggplot2",
+      "prompt": "What does adding `theme_minimal()` change?",
+      "answer": "The plot's non-data styling, using ggplot2's minimal theme.",
+      "explanation": "Themes affect elements such as background, grid, text, and axes rather than the underlying data."
+    },
+    {
+      "id": "ggplot2_010",
+      "category": "ggplot2",
+      "prompt": "Which ggplot2 function saves the most recently displayed plot or an explicitly supplied plot to a file?",
+      "answer": "`ggsave()`.",
+      "explanation": "The filename extension commonly determines the output format."
+    },
+    {
+      "id": "repo_001",
+      "category": "repo_debugging",
+      "prompt": "In an R package repository, what normally lives in the `R/` directory?",
+      "answer": "The package's R function, class, and method source files.",
+      "explanation": "Documentation, tests, and compiled source conventionally live in other directories."
+    },
+    {
+      "id": "repo_002",
+      "category": "repo_debugging",
+      "prompt": "What is the `DESCRIPTION` file used for in an R package?",
+      "answer": "Package metadata, dependency declarations, version information, and related build fields.",
+      "explanation": "It is the first place to inspect package requirements and declared imports or suggests."
+    },
+    {
+      "id": "repo_003",
+      "category": "repo_debugging",
+      "prompt": "What does an R package's `NAMESPACE` file control?",
+      "answer": "Which names are exported and which functions, classes, or methods are imported or registered.",
+      "explanation": "It helps explain why a function is public, available internally, or dispatched as a method."
+    },
+    {
+      "id": "repo_004",
+      "category": "repo_debugging",
+      "prompt": "What would you expect to find under `tests/testthat/` in an R package?",
+      "answer": "Automated `testthat` test files.",
+      "explanation": "Tests often provide compact examples of expected inputs, outputs, warnings, and failures."
+    },
+    {
+      "id": "repo_005",
+      "category": "repo_debugging",
+      "prompt": "What does `requireNamespace(\"pkg\", quietly = TRUE)` check without attaching `pkg`?",
+      "answer": "Whether the package namespace is available to load.",
+      "explanation": "Package code commonly uses this for optional dependencies before calling `pkg::function`."
+    },
+    {
+      "id": "repo_006",
+      "category": "repo_debugging",
+      "prompt": "What does `pkg:::internal_function` signal compared with `pkg::exported_function`?",
+      "answer": "It accesses a non-exported package object rather than a public exported one.",
+      "explanation": "Triple-colon calls are fragile because internal functions are not part of the supported public API."
+    },
+    {
+      "id": "repo_007",
+      "category": "repo_debugging",
+      "prompt": "After an R error, what does `traceback()` help you inspect?",
+      "answer": "The sequence of function calls leading to the error.",
+      "explanation": "The call stack helps locate which layer of a pipeline or package raised the failure."
+    },
+    {
+      "id": "repo_008",
+      "category": "repo_debugging",
+      "prompt": "Why include `sessionInfo()` when reproducing a bioinformatics R error?",
+      "answer": "It records R, platform, and loaded package version information.",
+      "explanation": "Version differences are a common cause of behavior and method-dispatch discrepancies."
+    }
+  ],
+  "retired_questions": [
+    {
+      "id": "fundamentals_008",
+      "category": "fundamentals",
+      "prompt": "Does `is.na(NaN)` return `TRUE` or `FALSE`?",
+      "answer": "`TRUE`.",
+      "explanation": "`NaN` is treated as a missing numeric value by `is.na()`.",
+      "retired_reason": "Removed during the repository-calibrated practical-relevance refactor."
+    },
+    {
+      "id": "fundamentals_009",
+      "category": "fundamentals",
+      "prompt": "Does `is.nan(NA_real_)` return `TRUE` or `FALSE`?",
+      "answer": "`FALSE`.",
+      "explanation": "All `NaN` values are missing, but an ordinary numeric `NA` is not specifically `NaN`.",
+      "retired_reason": "Removed during the repository-calibrated practical-relevance refactor."
+    },
+    {
+      "id": "fundamentals_014",
+      "category": "fundamentals",
+      "prompt": "What special value results from `0 / 0` in R?",
+      "answer": "`NaN`.",
+      "explanation": "Zero divided by zero is undefined and represented as not-a-number.",
+      "retired_reason": "Removed during the repository-calibrated practical-relevance refactor."
+    },
+    {
+      "id": "fundamentals_015",
+      "category": "fundamentals",
+      "prompt": "What special value results from `1 / 0` in R?",
+      "answer": "`Inf`.",
+      "explanation": "Positive division by zero produces positive infinity.",
+      "retired_reason": "Removed during the repository-calibrated practical-relevance refactor."
+    },
+    {
+      "id": "fundamentals_016",
+      "category": "fundamentals",
+      "prompt": "What does `typeof(TRUE)` return?",
+      "answer": "`\"logical\"`.",
+      "explanation": "`TRUE` and `FALSE` are logical values.",
+      "retired_reason": "Removed during the repository-calibrated practical-relevance refactor."
+    }
+  ]
+}

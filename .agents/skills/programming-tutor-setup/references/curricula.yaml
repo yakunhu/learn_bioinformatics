@@ -1,0 +1,676 @@
+schema_version: 1
+languages:
+  python:
+    display_name: "Python"
+    track: "LeetCode interview DSA plus applied bioinformatics Python"
+    track_order:
+      - dsa_interview
+      - bioinformatics_python
+    tracks:
+      dsa_interview:
+        assignment_style: "canonical_leetcode"
+        initial_problem_pool: "Representative canonical problems from LeetCode 75, supplemented by Top Interview 150 where a retained category is not represented in LeetCode 75."
+        later_problem_pool: "Remaining LeetCode 75 problems and related nonduplicate Top Interview 150 problems."
+        category_order:
+          - arrays_strings
+          - hash_maps
+          - two_pointers_sliding_window
+          - prefix_sum
+          - recursion
+          - linked_lists
+          - stack_queue
+          - binary_search
+          - trees
+          - heap_priority_queue
+          - sorting_filtering
+          - frequency_counting
+          - backtracking
+          - tries
+          - graphs
+          - intervals
+          - greedy
+          - dynamic_programming
+          - bit_manipulation
+          - monotonic_stack
+          - matrix
+          - complexity_analysis
+      bioinformatics_python:
+        assignment_style: "applied_non_leetcode"
+        category_order:
+          - file_parsing
+          - bioinformatics_formats
+          - interval_merging
+          - oop_basics
+    category_order:
+      - arrays_strings
+      - hash_maps
+      - two_pointers_sliding_window
+      - prefix_sum
+      - recursion
+      - linked_lists
+      - stack_queue
+      - binary_search
+      - trees
+      - heap_priority_queue
+      - sorting_filtering
+      - frequency_counting
+      - backtracking
+      - tries
+      - graphs
+      - intervals
+      - greedy
+      - dynamic_programming
+      - bit_manipulation
+      - monotonic_stack
+      - matrix
+      - complexity_analysis
+      - file_parsing
+      - bioinformatics_formats
+      - interval_merging
+      - oop_basics
+    categories:
+      arrays_strings:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "prior_easy_topics_to_medium"
+        importance: "very_high"
+        prior_guidance: "The learner reports prior easy-level study; verify only through baseline evidence or later work."
+        objectives:
+          - id: "lc_1768_merge_strings_alternately"
+            description: "LeetCode 1768, Merge Strings Alternately: merge two strings with uneven-length boundary handling."
+          - id: "lc_151_reverse_words_in_a_string"
+            description: "LeetCode 151, Reverse Words in a String: normalize spacing and reverse word order without reversing characters within words."
+          - id: "lc_238_product_of_array_except_self"
+            description: "LeetCode 238, Product of Array Except Self: construct prefix and suffix products without division."
+          - id: "lc_443_string_compression"
+            description: "LeetCode 443, String Compression: perform an in-place read/write transformation and return the new length."
+      hash_maps:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "prior_easy_topics_to_medium"
+        importance: "very_high"
+        prior_guidance: "The learner reports prior easy-level study; verify only through baseline evidence or later work."
+        objectives:
+          - id: "lc_2215_find_the_difference_of_two_arrays"
+            description: "LeetCode 2215, Find the Difference of Two Arrays: use set membership to return distinct asymmetric differences."
+          - id: "lc_1207_unique_number_of_occurrences"
+            description: "LeetCode 1207, Unique Number of Occurrences: count values and determine whether frequency counts are unique."
+          - id: "lc_1657_determine_if_two_strings_are_close"
+            description: "LeetCode 1657, Determine if Two Strings Are Close: compare character sets and frequency multisets."
+          - id: "lc_2352_equal_row_and_column_pairs"
+            description: "LeetCode 2352, Equal Row and Column Pairs: encode matrix rows and columns as hashable composite keys."
+      two_pointers_sliding_window:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "prior_easy_topics_to_medium"
+        importance: "high"
+        prior_guidance: "The learner reports prior easy-level study; verify only through baseline evidence or later work."
+        objectives:
+          - id: "lc_283_move_zeroes"
+            description: "LeetCode 283, Move Zeroes: use same-direction pointers for a stable in-place partition."
+          - id: "lc_11_container_with_most_water"
+            description: "LeetCode 11, Container With Most Water: use opposing pointers and justify which boundary can be discarded."
+          - id: "lc_643_maximum_average_subarray_i"
+            description: "LeetCode 643, Maximum Average Subarray I: maintain a fixed-size window incrementally."
+          - id: "lc_1004_max_consecutive_ones_iii"
+            description: "LeetCode 1004, Max Consecutive Ones III: maintain a variable window under a bounded-zero invariant."
+      prefix_sum:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "leetcode_75_core"
+        importance: "high"
+        objectives:
+          - id: "lc_1732_find_the_highest_altitude"
+            description: "LeetCode 1732, Find the Highest Altitude: accumulate a running prefix value and track its maximum."
+          - id: "lc_724_find_pivot_index"
+            description: "LeetCode 724, Find Pivot Index: relate left and right sums using a total and a running prefix."
+      recursion:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "prior_easy_topics_to_medium"
+        importance: "medium"
+        prior_guidance: "The learner reports prior easy-level study; verify only through baseline evidence or later work."
+        objectives:
+          - id: "lc_50_pow_x_n"
+            description: "LeetCode 50, Pow(x, n): use divide-and-conquer recursion with logarithmic depth."
+          - id: "lc_24_swap_nodes_in_pairs"
+            description: "LeetCode 24, Swap Nodes in Pairs: define a recursive linked-list return contract while rewiring pairs."
+          - id: "lc_779_kth_symbol_in_grammar"
+            description: "LeetCode 779, K-th Symbol in Grammar: reduce the problem to a smaller row with a precise base case."
+      linked_lists:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "prior_easy_topics_to_medium"
+        importance: "medium"
+        prior_guidance: "The learner reports prior easy-level study; verify only through baseline evidence or later work."
+        objectives:
+          - id: "lc_206_reverse_linked_list"
+            description: "LeetCode 206, Reverse Linked List: reverse links while preserving access to the unprocessed suffix."
+          - id: "lc_2095_delete_the_middle_node_of_a_linked_list"
+            description: "LeetCode 2095, Delete the Middle Node of a Linked List: locate and unlink the required middle node."
+          - id: "lc_328_odd_even_linked_list"
+            description: "LeetCode 328, Odd Even Linked List: maintain and reconnect two position-based chains."
+          - id: "lc_2130_maximum_twin_sum_of_a_linked_list"
+            description: "LeetCode 2130, Maximum Twin Sum of a Linked List: combine midpoint detection, reversal, and paired traversal."
+      stack_queue:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "leetcode_75_core"
+        importance: "high"
+        objectives:
+          - id: "lc_2390_removing_stars_from_a_string"
+            description: "LeetCode 2390, Removing Stars From a String: use stack state to cancel the most recent unmatched character."
+          - id: "lc_735_asteroid_collision"
+            description: "LeetCode 735, Asteroid Collision: resolve repeated interactions against the active stack boundary."
+          - id: "lc_394_decode_string"
+            description: "LeetCode 394, Decode String: maintain nested repetition state with a stack."
+          - id: "lc_933_number_of_recent_calls"
+            description: "LeetCode 933, Number of Recent Calls: maintain a queue containing only timestamps in the active range."
+      binary_search:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "leetcode_75_core"
+        importance: "very_high"
+        objectives:
+          - id: "lc_374_guess_number_higher_or_lower"
+            description: "LeetCode 374, Guess Number Higher or Lower: maintain inclusive binary-search bounds from comparison feedback."
+          - id: "lc_2300_successful_pairs_of_spells_and_potions"
+            description: "LeetCode 2300, Successful Pairs of Spells and Potions: locate a threshold boundary in sorted data."
+          - id: "lc_162_find_peak_element"
+            description: "LeetCode 162, Find Peak Element: use local slope information to discard half the search interval."
+          - id: "lc_875_koko_eating_bananas"
+            description: "LeetCode 875, Koko Eating Bananas: binary-search the smallest feasible answer under a monotonic predicate."
+      trees:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "prior_easy_topics_to_medium"
+        importance: "medium"
+        prior_guidance: "The learner reports prior easy-level study; verify only through baseline evidence or later work."
+        objectives:
+          - id: "lc_104_maximum_depth_of_binary_tree"
+            description: "LeetCode 104, Maximum Depth of Binary Tree: define recursive subtree depth and combine child results."
+          - id: "lc_1448_count_good_nodes_in_binary_tree"
+            description: "LeetCode 1448, Count Good Nodes in Binary Tree: carry path-dependent maximum state through DFS."
+          - id: "lc_199_binary_tree_right_side_view"
+            description: "LeetCode 199, Binary Tree Right Side View: extract one visible node from each BFS level."
+          - id: "lc_450_delete_node_in_a_bst"
+            description: "LeetCode 450, Delete Node in a BST: preserve BST ordering across leaf, one-child, and two-child deletion."
+      heap_priority_queue:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "leetcode_75_core"
+        importance: "high"
+        objectives:
+          - id: "lc_215_kth_largest_element_in_an_array"
+            description: "LeetCode 215, Kth Largest Element in an Array: maintain or construct an efficient selection structure without fully sorting by default."
+          - id: "lc_2336_smallest_number_in_infinite_set"
+            description: "LeetCode 2336, Smallest Number in Infinite Set: combine an implicit sequence with a heap-backed add-back set."
+          - id: "lc_2542_maximum_subsequence_score"
+            description: "LeetCode 2542, Maximum Subsequence Score: combine sorted thresholds with a bounded heap."
+          - id: "lc_2462_total_cost_to_hire_k_workers"
+            description: "LeetCode 2462, Total Cost to Hire K Workers: coordinate candidate heaps and deterministic tie handling."
+      sorting_filtering:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "leetcode_interview_foundations"
+        importance: "high"
+        objectives:
+          - id: "lc_912_sort_an_array"
+            description: "LeetCode 912, Sort an Array: implement an O(n log n) sorting algorithm without built-in sorting."
+          - id: "lc_75_sort_colors"
+            description: "LeetCode 75, Sort Colors: perform an in-place three-way partition without built-in sorting."
+          - id: "lc_27_remove_element"
+            description: "LeetCode 27, Remove Element: filter in place and return the valid prefix length."
+          - id: "lc_88_merge_sorted_array"
+            description: "LeetCode 88, Merge Sorted Array: merge two sorted sequences in place from the available boundary."
+      frequency_counting:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "leetcode_interview_foundations"
+        importance: "very_high"
+        objectives:
+          - id: "lc_242_valid_anagram"
+            description: "LeetCode 242, Valid Anagram: compare exact character frequencies."
+          - id: "lc_347_top_k_frequent_elements"
+            description: "LeetCode 347, Top K Frequent Elements: combine frequency counting with efficient ranked selection."
+          - id: "lc_451_sort_characters_by_frequency"
+            description: "LeetCode 451, Sort Characters by Frequency: produce output grouped by descending counts."
+          - id: "lc_692_top_k_frequent_words"
+            description: "LeetCode 692, Top K Frequent Words: rank by frequency with deterministic lexical ties."
+      backtracking:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "leetcode_75_core"
+        importance: "high"
+        objectives:
+          - id: "lc_17_letter_combinations_of_a_phone_number"
+            description: "LeetCode 17, Letter Combinations of a Phone Number: build all choices through a depth-indexed backtracking state."
+          - id: "lc_216_combination_sum_iii"
+            description: "LeetCode 216, Combination Sum III: backtrack with remaining count, remaining sum, and increasing candidates."
+      tries:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "leetcode_75_core"
+        importance: "medium"
+        objectives:
+          - id: "lc_208_implement_trie_prefix_tree"
+            description: "LeetCode 208, Implement Trie: implement insertion, exact search, and prefix search with explicit terminal state."
+          - id: "lc_1268_search_suggestions_system"
+            description: "LeetCode 1268, Search Suggestions System: return bounded lexicographic suggestions for each growing prefix."
+      graphs:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "prior_easy_topics_to_medium"
+        importance: "medium"
+        objectives:
+          - id: "lc_841_keys_and_rooms"
+            description: "LeetCode 841, Keys and Rooms: determine reachability with graph traversal and visited state."
+          - id: "lc_547_number_of_provinces"
+            description: "LeetCode 547, Number of Provinces: count connected components from an adjacency matrix."
+          - id: "lc_994_rotting_oranges"
+            description: "LeetCode 994, Rotting Oranges: use multi-source BFS to model simultaneous time steps."
+          - id: "lc_399_evaluate_division"
+            description: "LeetCode 399, Evaluate Division: construct a weighted graph and answer path-product queries."
+      intervals:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "leetcode_75_core"
+        importance: "high"
+        objectives:
+          - id: "lc_435_non_overlapping_intervals"
+            description: "LeetCode 435, Non-overlapping Intervals: choose intervals greedily to minimize removals."
+          - id: "lc_452_minimum_number_of_arrows_to_burst_balloons"
+            description: "LeetCode 452, Minimum Number of Arrows to Burst Balloons: greedily maintain a shared overlap boundary."
+      greedy:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "leetcode_interview_core"
+        importance: "high"
+        objectives:
+          - id: "lc_55_jump_game"
+            description: "LeetCode 55, Jump Game: maintain the furthest reachable index under a greedy invariant."
+          - id: "lc_134_gas_station"
+            description: "LeetCode 134, Gas Station: use total feasibility and local deficit resets to identify a start."
+          - id: "lc_763_partition_labels"
+            description: "LeetCode 763, Partition Labels: close each partition only after all included characters end."
+          - id: "lc_53_maximum_subarray"
+            description: "LeetCode 53, Maximum Subarray: maintain the best subarray ending at the current position."
+      dynamic_programming:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "leetcode_75_core"
+        importance: "high"
+        objectives:
+          - id: "lc_1137_n_th_tribonacci_number"
+            description: "LeetCode 1137, N-th Tribonacci Number: define base cases and a compact one-dimensional recurrence."
+          - id: "lc_198_house_robber"
+            description: "LeetCode 198, House Robber: choose between taking and skipping under a one-dimensional state."
+          - id: "lc_62_unique_paths"
+            description: "LeetCode 62, Unique Paths: define a two-dimensional path-count recurrence."
+          - id: "lc_1143_longest_common_subsequence"
+            description: "LeetCode 1143, Longest Common Subsequence: define prefix-pair state and match or skip transitions."
+      bit_manipulation:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "leetcode_75_core"
+        importance: "medium"
+        objectives:
+          - id: "lc_338_counting_bits"
+            description: "LeetCode 338, Counting Bits: derive each bit count from a previously solved smaller value."
+          - id: "lc_136_single_number"
+            description: "LeetCode 136, Single Number: exploit XOR cancellation to isolate the unpaired value."
+          - id: "lc_1318_minimum_flips_to_make_a_or_b_equal_to_c"
+            description: "LeetCode 1318, Minimum Flips to Make a OR b Equal to c: evaluate required changes bit by bit."
+      monotonic_stack:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "leetcode_75_core"
+        importance: "medium_high"
+        objectives:
+          - id: "lc_739_daily_temperatures"
+            description: "LeetCode 739, Daily Temperatures: maintain unresolved indices in a monotonic stack."
+          - id: "lc_901_online_stock_span"
+            description: "LeetCode 901, Online Stock Span: compress dominated history into price-span stack entries."
+      matrix:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "leetcode_interview_core"
+        importance: "medium"
+        objectives:
+          - id: "lc_36_valid_sudoku"
+            description: "LeetCode 36, Valid Sudoku: validate row, column, and sub-box constraints."
+          - id: "lc_54_spiral_matrix"
+            description: "LeetCode 54, Spiral Matrix: traverse shrinking matrix boundaries without duplication."
+          - id: "lc_73_set_matrix_zeroes"
+            description: "LeetCode 73, Set Matrix Zeroes: propagate row and column markers without corrupting discovery."
+          - id: "lc_48_rotate_image"
+            description: "LeetCode 48, Rotate Image: perform an in-place square-matrix rotation."
+      complexity_analysis:
+        track: "dsa_interview"
+        problem_source: "leetcode"
+        stage: "leetcode_interview_foundations"
+        importance: "high"
+        objectives:
+          - id: "lc_121_best_time_to_buy_and_sell_stock"
+            description: "LeetCode 121, Best Time to Buy and Sell Stock: replace pair enumeration with a linear single-pass invariant and analyze complexity."
+          - id: "lc_560_subarray_sum_equals_k"
+            description: "LeetCode 560, Subarray Sum Equals K: replace nested subarray enumeration with prefix-frequency state and analyze the tradeoff."
+          - id: "lc_128_longest_consecutive_sequence"
+            description: "LeetCode 128, Longest Consecutive Sequence: achieve expected linear time by starting only at sequence boundaries."
+          - id: "lc_49_group_anagrams"
+            description: "LeetCode 49, Group Anagrams: compare canonical-key choices and their time-space costs."
+      file_parsing:
+        track: "bioinformatics_python"
+        problem_source: "applied_non_leetcode"
+        stage: "bioinformatics_python"
+        importance: "very_high"
+        objectives:
+          - id: "delimited_text"
+            description: "Parse delimited text safely, including headers, types, blanks, and malformed rows."
+          - id: "streaming_records"
+            description: "Process large files record by record without unnecessary full-file loading."
+          - id: "validated_output"
+            description: "Write deterministic output and report invalid or skipped records."
+          - id: "library_comparison"
+            description: "After a manual parser, use an appropriate library and explain what it handles."
+      bioinformatics_formats:
+        track: "bioinformatics_python"
+        problem_source: "applied_non_leetcode"
+        stage: "bioinformatics_python"
+        importance: "very_high"
+        objectives:
+          - id: "fasta_fastq"
+            description: "Parse and validate FASTA and FASTQ-like records, including multiline or quality constraints."
+          - id: "vcf"
+            description: "Parse VCF-like headers and variants while preserving missing and typed fields."
+          - id: "gtf"
+            description: "Parse GTF-like tabular records and attribute fields."
+          - id: "production_library"
+            description: "Repeat an applied task with Biopython, pysam, or another appropriate library."
+      interval_merging:
+        track: "bioinformatics_python"
+        problem_source: "applied_non_leetcode"
+        stage: "bioinformatics_python"
+        importance: "high"
+        objectives:
+          - id: "coordinate_contract"
+            description: "State coordinate conventions, sorting assumptions, and overlap or adjacency rules."
+          - id: "merge_intervals"
+            description: "Merge genomic-style intervals while preserving required grouping fields."
+          - id: "interval_annotation"
+            description: "Relate or annotate intervals using an efficient sweep or search strategy."
+      oop_basics:
+        track: "bioinformatics_python"
+        problem_source: "applied_non_leetcode"
+        stage: "bioinformatics_python"
+        importance: "medium_high"
+        objectives:
+          - id: "class_contract"
+            description: "Design a small bioinformatics-oriented class with clear state, invariants, and public methods."
+          - id: "composition_and_validation"
+            description: "Compose parsing and domain objects while validating construction or mutation."
+          - id: "testable_interfaces"
+            description: "Separate parsing, biological domain state, and output behavior for testing."
+  r:
+    display_name: "R"
+    track: "Core data operations, bioinformatics analysis, and package-specific workflows"
+    style_guidance: "Teach tidyverse first for general data work, with targeted base R for indexing, serialization, and reading existing code."
+    category_order:
+      - import_export
+      - inspect_data
+      - validate_data
+      - select_filter
+      - create_modify_columns
+      - sort_order
+      - group_summarize
+      - join_tables
+      - reshape_data
+      - export_results
+      - count_expression_matrices
+      - metadata_alignment
+      - normalization_awareness
+      - differential_expression_outputs
+      - gene_annotation_joins
+      - qc_summaries
+      - missing_outlier_checks
+      - basic_statistics
+      - multiple_testing
+      - plots
+      - deseq2
+      - seurat
+      - genomicranges_bioconductor
+    categories:
+      import_export:
+        stage: "tier_1_core_table_operations"
+        importance: "core"
+        objectives:
+          - id: "delimited_import"
+            description: "Read CSV and TSV inputs with deliberate headers, types, missing values, and paths."
+          - id: "excel_import"
+            description: "Read selected Excel sheets and validate their expected structures."
+          - id: "rds_round_trip"
+            description: "Save and load RDS objects while verifying structure and types."
+      inspect_data:
+        stage: "tier_1_core_table_operations"
+        importance: "core"
+        objectives:
+          - id: "shape_names_types"
+            description: "Inspect dimensions, names, classes, and column structures."
+          - id: "bounded_preview_summary"
+            description: "Use bounded previews and summaries to identify distributions and anomalies."
+          - id: "unique_frequency_inspection"
+            description: "Inspect unique values and categorical frequency tables."
+      validate_data:
+        stage: "tier_1_core_table_operations"
+        importance: "core"
+        objectives:
+          - id: "missing_duplicates"
+            description: "Detect and summarize missing values and duplicates at appropriate keys."
+          - id: "identifier_sets"
+            description: "Validate identifier membership, uniqueness, and set equality."
+          - id: "identifier_order"
+            description: "Distinguish matching ID sets from matching ID order."
+          - id: "dimension_schema_checks"
+            description: "Assert dimensions, required columns, types, and allowable values."
+      select_filter:
+        stage: "tier_1_core_table_operations"
+        importance: "core"
+        objectives:
+          - id: "select_columns"
+            description: "Choose, rename, and order required columns."
+          - id: "filter_conditions"
+            description: "Filter rows with combined logical, membership, and missing-value conditions."
+          - id: "bioinformatics_subset"
+            description: "Subset a biological table while preserving identifiers and auditability."
+      create_modify_columns:
+        stage: "tier_1_core_table_operations"
+        importance: "core"
+        objectives:
+          - id: "derived_columns"
+            description: "Create vectorized derived columns from existing measurements."
+          - id: "recode_categories"
+            description: "Recode categorical values with explicit unknown and missing behavior."
+          - id: "convert_types"
+            description: "Convert types safely and validate conversion failures."
+      sort_order:
+        stage: "tier_1_core_table_operations"
+        importance: "core"
+        objectives:
+          - id: "single_multi_key_sort"
+            description: "Arrange rows by one or more keys and directions."
+          - id: "ties_missing_order"
+            description: "Make tie and missing-value ordering explicit."
+      group_summarize:
+        stage: "tier_1_core_table_operations"
+        importance: "core"
+        objectives:
+          - id: "grouped_counts"
+            description: "Count rows or distinct identifiers by condition, sample, or cluster."
+          - id: "grouped_statistics"
+            description: "Calculate grouped mean, sum, spread, and missingness-aware summaries."
+          - id: "group_integrity"
+            description: "Avoid accidental grouping carryover and validate output granularity."
+      join_tables:
+        stage: "tier_1_core_table_operations"
+        importance: "core"
+        objectives:
+          - id: "join_keys_cardinality"
+            description: "Choose join keys and state expected one-to-one or one-to-many cardinality."
+          - id: "join_diagnostics"
+            description: "Detect unmatched, duplicated, and expanded rows after a join."
+          - id: "bioinformatics_join"
+            description: "Merge metadata, counts, annotations, QC, or results without losing lineage."
+      reshape_data:
+        stage: "tier_1_core_table_operations"
+        importance: "core"
+        objectives:
+          - id: "wide_to_long"
+            description: "Pivot a wide measurement matrix to tidy long form with correct identifiers."
+          - id: "long_to_wide"
+            description: "Pivot long records to wide form with explicit duplicate aggregation rules."
+          - id: "reshape_round_trip"
+            description: "Validate that a reshape preserves the intended observations."
+      export_results:
+        stage: "tier_1_core_table_operations"
+        importance: "core"
+        objectives:
+          - id: "delimited_export"
+            description: "Write clean CSV or TSV outputs with correct headers, separators, and row-name behavior."
+          - id: "reproducible_paths"
+            description: "Construct reproducible output paths and avoid accidental overwrite."
+          - id: "round_trip_validation"
+            description: "Read exported results back and verify schema and values."
+      count_expression_matrices:
+        stage: "tier_2_bioinformatics_operations"
+        importance: "domain_core"
+        objectives:
+          - id: "matrix_orientation"
+            description: "Separate gene rows, sample columns, and annotation fields."
+          - id: "count_matrix_validation"
+            description: "Validate numeric counts, identifiers, duplicates, and missingness."
+          - id: "matrix_tidy_conversion"
+            description: "Convert between matrix and tidy representations without changing meaning."
+      metadata_alignment:
+        stage: "tier_2_bioinformatics_operations"
+        importance: "domain_core"
+        objectives:
+          - id: "sample_set_match"
+            description: "Verify metadata and matrix sample sets match."
+          - id: "sample_order_alignment"
+            description: "Reorder metadata or matrices safely and prove final order equality."
+          - id: "alignment_failures"
+            description: "Report missing, extra, duplicated, or malformed sample identifiers."
+      normalization_awareness:
+        stage: "tier_2_bioinformatics_operations"
+        importance: "domain_core"
+        objectives:
+          - id: "library_size_scaling"
+            description: "Compute or interpret CPM/TPM-style scaling and its assumptions."
+          - id: "log_transform"
+            description: "Apply and explain a log transform with deliberate zero handling."
+          - id: "method_selection"
+            description: "Distinguish simple scaling from model-aware count normalization conceptually."
+      differential_expression_outputs:
+        stage: "tier_2_bioinformatics_operations"
+        importance: "domain_core"
+        objectives:
+          - id: "filter_de_results"
+            description: "Filter differential-expression results by adjusted p-value and effect size."
+          - id: "rank_top_genes"
+            description: "Rank top genes with explicit direction, ties, and missing-value handling."
+          - id: "de_export"
+            description: "Create an auditable DEG table with thresholds and required annotations."
+      gene_annotation_joins:
+        stage: "tier_2_bioinformatics_operations"
+        importance: "domain_core"
+        objectives:
+          - id: "identifier_mapping"
+            description: "Attach symbols, descriptions, or chromosome data using explicit identifiers."
+          - id: "mapping_multiplicity"
+            description: "Diagnose one-to-many mappings, missing annotations, and row expansion."
+          - id: "annotation_audit"
+            description: "Report annotation coverage and preserve original identifiers."
+      qc_summaries:
+        stage: "tier_2_bioinformatics_operations"
+        importance: "domain_core"
+        objectives:
+          - id: "sample_qc_summary"
+            description: "Summarize reads, mapping rate, RIN, mitochondrial percentage, or analogous QC fields."
+          - id: "grouped_qc"
+            description: "Compare QC summaries across conditions, batches, or sample groups."
+          - id: "qc_flags"
+            description: "Create transparent QC flags while retaining the underlying measurements."
+      missing_outlier_checks:
+        stage: "tier_2_bioinformatics_operations"
+        importance: "domain_core"
+        objectives:
+          - id: "missingness_patterns"
+            description: "Summarize missingness by sample and feature."
+          - id: "outlier_rule"
+            description: "Apply an explicit, explainable rule for unusual samples or failed QC."
+          - id: "outlier_audit"
+            description: "Separate detection from deletion and produce an auditable report."
+      basic_statistics:
+        stage: "tier_2_bioinformatics_operations"
+        importance: "domain_core"
+        objectives:
+          - id: "group_comparison"
+            description: "Run and interpret a t-test or Wilcoxon test with checked assumptions."
+          - id: "correlation"
+            description: "Compute and interpret correlation with missingness and visualization checks."
+          - id: "linear_model"
+            description: "Fit and interpret a basic linear model with a clearly defined response and predictors."
+      multiple_testing:
+        stage: "tier_2_bioinformatics_operations"
+        importance: "domain_core"
+        objectives:
+          - id: "p_adjust"
+            description: "Apply p.adjust and retain both raw and adjusted p-values."
+          - id: "fdr_interpretation"
+            description: "Explain and apply an FDR threshold without treating it as per-result certainty."
+      plots:
+        stage: "tier_2_bioinformatics_operations"
+        importance: "domain_core"
+        objectives:
+          - id: "distribution_plots"
+            description: "Create and label histogram, boxplot, or violin views appropriate to the data."
+          - id: "relationship_plots"
+            description: "Create scatterplots with meaningful encodings and missing-value handling."
+          - id: "pca_style_plot"
+            description: "Prepare and interpret a PCA-style sample plot with condition or batch metadata."
+          - id: "publication_export"
+            description: "Export a legible plot with deliberate size, labels, and file format."
+      deseq2:
+        stage: "tier_3_package_specific"
+        importance: "specialized"
+        objectives:
+          - id: "deseq_object"
+            description: "Create a DESeqDataSet with aligned counts, metadata, and a justified design."
+          - id: "run_extract"
+            description: "Run DESeq and extract a named comparison correctly."
+          - id: "lfc_shrink"
+            description: "Shrink log-fold changes and explain the purpose."
+          - id: "filter_sort_export"
+            description: "Filter, sort, annotate, and export DESeq2 results reproducibly."
+      seurat:
+        stage: "tier_3_package_specific"
+        importance: "specialized"
+        objectives:
+          - id: "metadata_and_subsets"
+            description: "Inspect Seurat metadata and subset cells with explicit conditions."
+          - id: "identities"
+            description: "Set, inspect, and use cluster identities deliberately."
+          - id: "markers"
+            description: "Find and inspect markers with an explicit comparison and thresholds."
+          - id: "expression_plots"
+            description: "Plot marker or feature expression and connect it to metadata and identities."
+      genomicranges_bioconductor:
+        stage: "tier_3_package_specific"
+        importance: "specialized"
+        objectives:
+          - id: "create_ranges"
+            description: "Create genomic ranges with explicit sequence names, coordinates, strands, and metadata."
+          - id: "find_overlaps"
+            description: "Find and interpret overlaps while respecting coordinate and strand choices."
+          - id: "annotate_intervals"
+            description: "Attach annotations to intervals and audit unmatched or multiple overlaps."

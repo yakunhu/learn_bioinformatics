@@ -1,0 +1,4 @@
+interface:
+  display_name: "Programming Tutor"
+  short_description: "Learn R and Python through graded coding tasks"
+  default_prompt: "Use $programming-tutor to teach and grade one sequential R or Python programming assignment."

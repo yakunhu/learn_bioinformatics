@@ -1,0 +1,13 @@
+{
+  "project": "R import/export practice",
+  "organism": "mouse",
+  "sample_id_key": "sample_id",
+  "gene_id_key": "gene_id",
+  "required_exports": {
+    "problem_1": "p1_import_audit.csv",
+    "problem_2": "p2_qc_import_audit.csv",
+    "problem_3": "p3_counts_long.tsv",
+    "problem_4": "p4_analysis_bundle.rds"
+  },
+  "notes": "This file is for import practice too. Do not treat it as an answer key."
+}

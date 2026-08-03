@@ -1,0 +1,9 @@
+sample_id,donor_id,tissue,condition,batch,library_id,fastq_r1,fastq_r2,md5_r1,md5_r2,notes
+S01,D01,cortex,control,B1,LIB001,S01_L001_R1.fastq.gz,S01_L001_R2.fastq.gz,8e1a4c2f,3f7b9d10,pass
+S02,D02,cortex,treated,B1,LIB002,S02_L001_R1.fastq.gz,S02_L001_R2.fastq.gz,1c6d8a44,bb72e915,pass
+S03,D03,hippocampus,control,B1,LIB003,S03_L001_R1.fastq.gz,S03_L001_R2.fastq.gz,a59f023e,72c41db8,low_input
+S04,D04,hippocampus,treated,B2,LIB004,S04_L002_R1.fastq.gz,S04_L002_R2.fastq.gz,d1307eac,5ab89162,pass
+S05,D05,striatum,control,B2,LIB005,S05_L002_R1.fastq.gz,S05_L002_R2.fastq.gz,07b2e6fd,c31a4890,pass
+S06,D06,striatum,treated,B2,LIB006,S06_L002_R1.fastq.gz,S06_L002_R2.fastq.gz,9f4c12a7,621bd3ee,pass
+S07,D07,cortex,control,B3,LIB007,S07_L003_R1.fastq.gz,S07_L003_R2.fastq.gz,46e803bf,d8071ca5,rerun
+S08,D08,cortex,treated,B3,LIB008,S08_L003_R1.fastq.gz,S08_L003_R2.fastq.gz,b518f629,14c7e0ad,pass

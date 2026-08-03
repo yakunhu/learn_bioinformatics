@@ -1,0 +1,4 @@
+interface:
+  display_name: "Programming Tutor Curriculum"
+  short_description: "Choose tasks, score attempts, schedule reviews"
+  default_prompt: "Use $programming-tutor-curriculum to select and record my next R or Python programming assignment."

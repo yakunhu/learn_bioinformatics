@@ -1,0 +1,1353 @@
+{
+  "schema_version": 1,
+  "language": "statistics",
+  "categories": [
+    {
+      "id": "descriptive_statistics",
+      "label": "Descriptive and robust statistics",
+      "question_bank_size": 10
+    },
+    {
+      "id": "probability",
+      "label": "Probability and conditional probability",
+      "question_bank_size": 10
+    },
+    {
+      "id": "distributions",
+      "label": "Statistical distributions",
+      "question_bank_size": 10
+    },
+    {
+      "id": "sampling_uncertainty",
+      "label": "Sampling and sampling uncertainty",
+      "question_bank_size": 10
+    },
+    {
+      "id": "estimation",
+      "label": "Estimation, confidence intervals, and effect sizes",
+      "question_bank_size": 10
+    },
+    {
+      "id": "hypothesis_testing",
+      "label": "Hypothesis tests, errors, and power",
+      "question_bank_size": 14
+    },
+    {
+      "id": "test_selection",
+      "label": "Test selection, assumptions, and paired data",
+      "question_bank_size": 12
+    },
+    {
+      "id": "nonparametric_methods",
+      "label": "Nonparametric and permutation methods",
+      "question_bank_size": 8
+    },
+    {
+      "id": "categorical_enrichment",
+      "label": "Categorical data and enrichment tests",
+      "question_bank_size": 10
+    },
+    {
+      "id": "correlation",
+      "label": "Correlation and association",
+      "question_bank_size": 10
+    },
+    {
+      "id": "regression_glm",
+      "label": "Regression and generalized linear models",
+      "question_bank_size": 14
+    },
+    {
+      "id": "multiple_testing",
+      "label": "Multiple testing and false-discovery control",
+      "question_bank_size": 14
+    },
+    {
+      "id": "experimental_design",
+      "label": "Experimental design and confounding",
+      "question_bank_size": 14
+    },
+    {
+      "id": "omics_statistics",
+      "label": "Omics count data and differential analysis",
+      "question_bank_size": 14
+    },
+    {
+      "id": "diagnostics",
+      "label": "Transformations, missingness, outliers, and diagnostics",
+      "question_bank_size": 8
+    },
+    {
+      "id": "survival_analysis",
+      "label": "Survival-analysis basics",
+      "question_bank_size": 6
+    },
+    {
+      "id": "predictive_evaluation",
+      "label": "Predictive-model evaluation",
+      "question_bank_size": 6
+    }
+  ],
+  "questions": [
+    {
+      "id": "descriptive_001",
+      "category": "descriptive_statistics",
+      "prompt": "Which is usually affected more by one extreme outlier: the mean or the median?",
+      "answer": "The mean.",
+      "explanation": "The mean uses every value's magnitude, whereas the median depends mainly on order."
+    },
+    {
+      "id": "descriptive_002",
+      "category": "descriptive_statistics",
+      "prompt": "For a strongly right-skewed distribution, which is usually larger: the mean or the median?",
+      "answer": "The mean.",
+      "explanation": "Large values in the right tail pull the mean upward more than the median."
+    },
+    {
+      "id": "descriptive_003",
+      "category": "descriptive_statistics",
+      "prompt": "If measurements are in reads per sample, what units does their variance have?",
+      "answer": "Squared reads per sample.",
+      "explanation": "Variance averages squared deviations, so its units are squared."
+    },
+    {
+      "id": "descriptive_004",
+      "category": "descriptive_statistics",
+      "prompt": "Does standard deviation have the original measurement units or squared units?",
+      "answer": "The original measurement units.",
+      "explanation": "Standard deviation is the square root of variance."
+    },
+    {
+      "id": "descriptive_005",
+      "category": "descriptive_statistics",
+      "prompt": "How is the interquartile range calculated?",
+      "answer": "`Q3 - Q1`.",
+      "explanation": "It spans the middle 50% of ordered observations."
+    },
+    {
+      "id": "descriptive_006",
+      "category": "descriptive_statistics",
+      "prompt": "Which pair is more robust to outliers: mean and standard deviation, or median and IQR?",
+      "answer": "Median and IQR.",
+      "explanation": "Both depend primarily on ranks rather than extreme magnitudes."
+    },
+    {
+      "id": "descriptive_007",
+      "category": "descriptive_statistics",
+      "prompt": "Why can the coefficient of variation be unstable when the mean is near zero?",
+      "answer": "Because it divides the standard deviation by the mean.",
+      "explanation": "A very small denominator can make the ratio extremely large or undefined."
+    },
+    {
+      "id": "descriptive_008",
+      "category": "descriptive_statistics",
+      "prompt": "What denominator is used in the usual sample variance: `n` or `n - 1`?",
+      "answer": "`n - 1`.",
+      "explanation": "Bessel's correction makes the usual sample variance unbiased for population variance under random sampling."
+    },
+    {
+      "id": "descriptive_009",
+      "category": "descriptive_statistics",
+      "prompt": "What does a z-score of `-2` say about an observation?",
+      "answer": "It is two standard deviations below the mean.",
+      "explanation": "A z-score expresses signed distance from the mean in standard-deviation units."
+    },
+    {
+      "id": "descriptive_010",
+      "category": "descriptive_statistics",
+      "prompt": "For positive multiplicative fold changes, which average often describes a typical multiplicative change better than the arithmetic mean?",
+      "answer": "The geometric mean.",
+      "explanation": "The geometric mean averages on a logarithmic scale and is suited to positive ratios."
+    },
+    {
+      "id": "probability_001",
+      "category": "probability",
+      "prompt": "If an event has probability `0.20`, what is the probability that it does not occur?",
+      "answer": "`0.80`.",
+      "explanation": "An event and its complement have probabilities summing to one."
+    },
+    {
+      "id": "probability_002",
+      "category": "probability",
+      "prompt": "What equation characterizes independence of events A and B?",
+      "answer": "`P(A and B) = P(A)P(B)`.",
+      "explanation": "For independent events, knowing one occurred does not change the probability of the other."
+    },
+    {
+      "id": "probability_003",
+      "category": "probability",
+      "prompt": "Can two mutually exclusive events with nonzero probabilities be independent?",
+      "answer": "No.",
+      "explanation": "Mutual exclusivity makes their joint probability zero, unlike the positive product required by independence."
+    },
+    {
+      "id": "probability_004",
+      "category": "probability",
+      "prompt": "How is `P(A given B)` calculated when `P(B) > 0`?",
+      "answer": "`P(A and B) / P(B)`.",
+      "explanation": "Conditioning restricts the probability space to outcomes in B."
+    },
+    {
+      "id": "probability_005",
+      "category": "probability",
+      "prompt": "What does Bayes' theorem let you reverse: `P(data given hypothesis)` into what quantity?",
+      "answer": "`P(hypothesis given data)`.",
+      "explanation": "The reversal also requires a prior probability and the marginal probability of the data."
+    },
+    {
+      "id": "probability_006",
+      "category": "probability",
+      "prompt": "If disease prevalence falls while sensitivity and specificity stay fixed, what generally happens to positive predictive value?",
+      "answer": "It decreases.",
+      "explanation": "With rarer disease, a larger fraction of positive results can be false positives."
+    },
+    {
+      "id": "probability_007",
+      "category": "probability",
+      "prompt": "What conditional probability does sensitivity represent?",
+      "answer": "The probability of a positive test given that the condition is present.",
+      "explanation": "Sensitivity is the true-positive rate."
+    },
+    {
+      "id": "probability_008",
+      "category": "probability",
+      "prompt": "What conditional probability does specificity represent?",
+      "answer": "The probability of a negative test given that the condition is absent.",
+      "explanation": "Specificity is the true-negative rate."
+    },
+    {
+      "id": "probability_009",
+      "category": "probability",
+      "prompt": "How do you calculate `P(A or B)` when A and B may overlap?",
+      "answer": "`P(A) + P(B) - P(A and B)`.",
+      "explanation": "Subtracting the intersection prevents double-counting shared outcomes."
+    },
+    {
+      "id": "probability_010",
+      "category": "probability",
+      "prompt": "In 100 independent trials with success probability `0.05`, what is the expected number of successes?",
+      "answer": "`5`.",
+      "explanation": "A binomial count has expectation `np`."
+    },
+    {
+      "id": "distributions_001",
+      "category": "distributions",
+      "prompt": "What kind of outcome does a Bernoulli distribution model?",
+      "answer": "One binary outcome such as success or failure.",
+      "explanation": "It has one trial and one success probability."
+    },
+    {
+      "id": "distributions_002",
+      "category": "distributions",
+      "prompt": "What two assumptions distinguish a basic binomial count: a fixed number of trials and what about success probability?",
+      "answer": "The trials have a common success probability and are independent.",
+      "explanation": "A binomial variable counts successes across those trials."
+    },
+    {
+      "id": "distributions_003",
+      "category": "distributions",
+      "prompt": "Under a Poisson distribution, how are the mean and variance related?",
+      "answer": "They are equal.",
+      "explanation": "Observed count data often have greater variance, motivating overdispersed models."
+    },
+    {
+      "id": "distributions_004",
+      "category": "distributions",
+      "prompt": "Why is a negative-binomial model often preferred to a Poisson model for RNA-seq counts?",
+      "answer": "It allows the variance to exceed the mean.",
+      "explanation": "Biological count data commonly exhibit overdispersion."
+    },
+    {
+      "id": "distributions_005",
+      "category": "distributions",
+      "prompt": "In a perfectly normal distribution, how do the mean and median compare?",
+      "answer": "They are equal.",
+      "explanation": "The normal distribution is symmetric around its center."
+    },
+    {
+      "id": "distributions_006",
+      "category": "distributions",
+      "prompt": "Compared with a normal distribution, does a t distribution have lighter or heavier tails?",
+      "answer": "Heavier tails.",
+      "explanation": "The extra tail mass reflects uncertainty from estimating variance, especially with small samples."
+    },
+    {
+      "id": "distributions_007",
+      "category": "distributions",
+      "prompt": "Can a chi-square random variable take negative values?",
+      "answer": "No.",
+      "explanation": "A chi-square variable is a sum of squared standard-normal variables."
+    },
+    {
+      "id": "distributions_008",
+      "category": "distributions",
+      "prompt": "Does the hypergeometric distribution describe sampling with or without replacement?",
+      "answer": "Without replacement.",
+      "explanation": "It is commonly used for overrepresentation tests against a finite gene universe."
+    },
+    {
+      "id": "distributions_009",
+      "category": "distributions",
+      "prompt": "What does it mean for a positive variable to be approximately log-normal?",
+      "answer": "Its logarithm is approximately normally distributed.",
+      "explanation": "The untransformed values are typically right-skewed."
+    },
+    {
+      "id": "distributions_010",
+      "category": "distributions",
+      "prompt": "What interval supports a standard beta-distributed variable?",
+      "answer": "From `0` to `1`.",
+      "explanation": "Beta distributions are therefore useful for probabilities and continuous proportions."
+    },
+    {
+      "id": "sampling_001",
+      "category": "sampling_uncertainty",
+      "prompt": "What is the difference between a population and a sample?",
+      "answer": "The population is the full target set; a sample is the observed subset drawn from it.",
+      "explanation": "Inference uses the sample to learn about the population."
+    },
+    {
+      "id": "sampling_002",
+      "category": "sampling_uncertainty",
+      "prompt": "Is a sample mean a parameter or a statistic?",
+      "answer": "A statistic.",
+      "explanation": "A statistic is calculated from sample data; a parameter describes a population."
+    },
+    {
+      "id": "sampling_003",
+      "category": "sampling_uncertainty",
+      "prompt": "What is a sampling distribution?",
+      "answer": "The distribution of a statistic across repeated samples from the same population.",
+      "explanation": "It describes how the statistic varies because of sampling."
+    },
+    {
+      "id": "sampling_004",
+      "category": "sampling_uncertainty",
+      "prompt": "How does the standard error of a mean scale with sample size `n`, all else equal?",
+      "answer": "It decreases in proportion to `1 / sqrt(n)`.",
+      "explanation": "The standard error is the population standard deviation divided by `sqrt(n)`, or its estimate."
+    },
+    {
+      "id": "sampling_005",
+      "category": "sampling_uncertainty",
+      "prompt": "Approximately what happens to a mean's standard error if sample size is quadrupled?",
+      "answer": "It is halved.",
+      "explanation": "The square root of four is two."
+    },
+    {
+      "id": "sampling_006",
+      "category": "sampling_uncertainty",
+      "prompt": "What does the central limit theorem say about a sample mean as sample size grows under suitable conditions?",
+      "answer": "Its sampling distribution approaches a normal distribution.",
+      "explanation": "This can hold even when individual observations are not normally distributed."
+    },
+    {
+      "id": "sampling_007",
+      "category": "sampling_uncertainty",
+      "prompt": "What does the law of large numbers say about the sample mean?",
+      "answer": "It converges toward the population mean as sample size grows.",
+      "explanation": "It concerns convergence, not necessarily a normal sampling distribution."
+    },
+    {
+      "id": "sampling_008",
+      "category": "sampling_uncertainty",
+      "prompt": "In a standard nonparametric bootstrap, are observations resampled with or without replacement?",
+      "answer": "With replacement.",
+      "explanation": "Each bootstrap sample usually has the same size as the original sample."
+    },
+    {
+      "id": "sampling_009",
+      "category": "sampling_uncertainty",
+      "prompt": "What is shuffled in a basic two-group permutation test?",
+      "answer": "The group labels are reassigned among observations.",
+      "explanation": "This generates a null distribution when labels are exchangeable under the null."
+    },
+    {
+      "id": "sampling_010",
+      "category": "sampling_uncertainty",
+      "prompt": "Which improves inference about biological variability more directly: more biological replicates or more reads from the same replicate?",
+      "answer": "More biological replicates.",
+      "explanation": "Additional reads improve measurement depth but do not create new independent biological units."
+    },
+    {
+      "id": "estimation_001",
+      "category": "estimation",
+      "prompt": "What is a point estimate?",
+      "answer": "A single sample-based value used to estimate a population parameter.",
+      "explanation": "Examples include a sample mean or estimated regression coefficient."
+    },
+    {
+      "id": "estimation_002",
+      "category": "estimation",
+      "prompt": "What makes an estimator unbiased?",
+      "answer": "Its expected value equals the true parameter.",
+      "explanation": "Unbiasedness is a repeated-sampling property, not a guarantee for one dataset."
+    },
+    {
+      "id": "estimation_003",
+      "category": "estimation",
+      "prompt": "Does a frequentist 95% confidence interval mean there is a 95% probability that the fixed parameter lies in this computed interval?",
+      "answer": "No.",
+      "explanation": "The 95% refers to the long-run coverage of intervals produced by the procedure."
+    },
+    {
+      "id": "estimation_004",
+      "category": "estimation",
+      "prompt": "What does 95% confidence-interval coverage mean over repeated studies?",
+      "answer": "About 95% of intervals from the procedure would contain the true parameter under its assumptions.",
+      "explanation": "The parameter is treated as fixed while the intervals vary across samples."
+    },
+    {
+      "id": "estimation_005",
+      "category": "estimation",
+      "prompt": "For a two-sided test of a difference at `alpha = 0.05`, what usually follows if the matching 95% confidence interval excludes zero?",
+      "answer": "The result is statistically significant at the 0.05 level.",
+      "explanation": "This equivalence requires the confidence interval and test to use the same model and assumptions."
+    },
+    {
+      "id": "estimation_006",
+      "category": "estimation",
+      "prompt": "Holding the data fixed, is a 99% confidence interval generally wider or narrower than a 95% interval?",
+      "answer": "Wider.",
+      "explanation": "Greater confidence requires covering a broader range of plausible parameter values."
+    },
+    {
+      "id": "estimation_007",
+      "category": "estimation",
+      "prompt": "All else equal, what usually happens to confidence-interval width as sample size increases?",
+      "answer": "It narrows.",
+      "explanation": "Larger samples generally reduce standard errors."
+    },
+    {
+      "id": "estimation_008",
+      "category": "estimation",
+      "prompt": "What does an effect size describe that a p-value does not?",
+      "answer": "The magnitude and usually direction of an effect.",
+      "explanation": "A p-value measures compatibility with a null model, not practical importance."
+    },
+    {
+      "id": "estimation_009",
+      "category": "estimation",
+      "prompt": "What ordinary fold change corresponds to a log2 fold change of `1`?",
+      "answer": "A twofold increase.",
+      "explanation": "`2^1 = 2`."
+    },
+    {
+      "id": "estimation_010",
+      "category": "estimation",
+      "prompt": "What value of an odds ratio represents no association?",
+      "answer": "`1`.",
+      "explanation": "Values above or below one indicate higher or lower odds, respectively."
+    },
+    {
+      "id": "hypothesis_001",
+      "category": "hypothesis_testing",
+      "prompt": "What does a null hypothesis usually represent?",
+      "answer": "A specified baseline such as no effect, no difference, or no association.",
+      "explanation": "The statistical test evaluates data compatibility with that specified model."
+    },
+    {
+      "id": "hypothesis_002",
+      "category": "hypothesis_testing",
+      "prompt": "What is a p-value?",
+      "answer": "Under the null model, the probability of a result at least as extreme as the observed result.",
+      "explanation": "The definition is conditional on the null and on the chosen test statistic."
+    },
+    {
+      "id": "hypothesis_003",
+      "category": "hypothesis_testing",
+      "prompt": "Is a p-value the probability that the null hypothesis is true?",
+      "answer": "No.",
+      "explanation": "It is a probability about data under the null, not a posterior probability of the null."
+    },
+    {
+      "id": "hypothesis_004",
+      "category": "hypothesis_testing",
+      "prompt": "What role does `alpha` play in a hypothesis test?",
+      "answer": "It is the preselected threshold controlling the Type I error rate for the decision rule.",
+      "explanation": "A common value is 0.05, but it should be chosen before inspecting results."
+    },
+    {
+      "id": "hypothesis_005",
+      "category": "hypothesis_testing",
+      "prompt": "What is a Type I error?",
+      "answer": "Rejecting the null hypothesis when it is true.",
+      "explanation": "It is a false-positive decision."
+    },
+    {
+      "id": "hypothesis_006",
+      "category": "hypothesis_testing",
+      "prompt": "What is a Type II error?",
+      "answer": "Failing to reject the null hypothesis when the specified alternative is true.",
+      "explanation": "It is a false-negative decision relative to that alternative."
+    },
+    {
+      "id": "hypothesis_007",
+      "category": "hypothesis_testing",
+      "prompt": "How is statistical power related to the Type II error probability `beta`?",
+      "answer": "Power is `1 - beta`.",
+      "explanation": "It is the probability of rejecting the null under a specified alternative."
+    },
+    {
+      "id": "hypothesis_008",
+      "category": "hypothesis_testing",
+      "prompt": "All else equal, does a larger true effect usually increase or decrease statistical power?",
+      "answer": "Increase it.",
+      "explanation": "Larger signals are easier to distinguish from sampling variation."
+    },
+    {
+      "id": "hypothesis_009",
+      "category": "hypothesis_testing",
+      "prompt": "When is a one-sided test defensible instead of a two-sided test?",
+      "answer": "When the direction was specified in advance and effects in the opposite direction would not count as evidence for the claim.",
+      "explanation": "Choosing a side after seeing the data invalidates the nominal error rate."
+    },
+    {
+      "id": "hypothesis_010",
+      "category": "hypothesis_testing",
+      "prompt": "Does failing to reject a null hypothesis prove that there is no effect?",
+      "answer": "No.",
+      "explanation": "The study may be underpowered or compatible with a range of small effects."
+    },
+    {
+      "id": "hypothesis_011",
+      "category": "hypothesis_testing",
+      "prompt": "With a prespecified `alpha = 0.05`, is an unadjusted p-value of `0.03` statistically significant for a single test?",
+      "answer": "Yes.",
+      "explanation": "The p-value is below the decision threshold, assuming the test is valid."
+    },
+    {
+      "id": "hypothesis_012",
+      "category": "hypothesis_testing",
+      "prompt": "Can a p-value of `0.20` distinguish a truly absent effect from an underpowered study?",
+      "answer": "No.",
+      "explanation": "The p-value alone does not establish equivalence or adequate power."
+    },
+    {
+      "id": "hypothesis_013",
+      "category": "hypothesis_testing",
+      "prompt": "What does a test statistic summarize?",
+      "answer": "How far the observed data depart from the null expectation on the test's scale.",
+      "explanation": "Its null distribution is used to calculate the p-value."
+    },
+    {
+      "id": "hypothesis_014",
+      "category": "hypothesis_testing",
+      "prompt": "What happens to false-positive risk if data collection repeatedly stops as soon as `p < 0.05` without a sequential design?",
+      "answer": "It increases above the nominal level.",
+      "explanation": "Repeated unplanned looks create additional chances to cross the threshold."
+    },
+    {
+      "id": "test_selection_001",
+      "category": "test_selection",
+      "prompt": "Which basic test compares one sample mean with a fixed reference value?",
+      "answer": "A one-sample t-test.",
+      "explanation": "It tests the mean difference from the specified reference."
+    },
+    {
+      "id": "test_selection_002",
+      "category": "test_selection",
+      "prompt": "Which t-test is appropriate for before-and-after measurements from the same subjects?",
+      "answer": "A paired t-test.",
+      "explanation": "The analysis is performed on within-subject differences."
+    },
+    {
+      "id": "test_selection_003",
+      "category": "test_selection",
+      "prompt": "For two independent groups with possibly unequal variances, which t-test is generally preferred?",
+      "answer": "Welch's two-sample t-test.",
+      "explanation": "Welch's test does not require equal population variances."
+    },
+    {
+      "id": "test_selection_004",
+      "category": "test_selection",
+      "prompt": "What information is discarded if paired observations are analyzed as two independent groups?",
+      "answer": "The within-pair matching or correlation.",
+      "explanation": "Ignoring valid pairing usually wastes precision and can misstate uncertainty."
+    },
+    {
+      "id": "test_selection_005",
+      "category": "test_selection",
+      "prompt": "Which classical test compares means across more than two independent groups in one analysis?",
+      "answer": "One-way ANOVA.",
+      "explanation": "It tests whether all group means are equal under its assumptions."
+    },
+    {
+      "id": "test_selection_006",
+      "category": "test_selection",
+      "prompt": "After a significant omnibus ANOVA, is the test alone enough to identify which group means differ?",
+      "answer": "No.",
+      "explanation": "Planned contrasts or multiplicity-adjusted post-hoc comparisons are needed."
+    },
+    {
+      "id": "test_selection_007",
+      "category": "test_selection",
+      "prompt": "In a linear model, should normality be assessed primarily for the raw outcome or for the model residuals?",
+      "answer": "For the residuals.",
+      "explanation": "The normal-error assumption concerns deviations remaining after the modeled effects."
+    },
+    {
+      "id": "test_selection_008",
+      "category": "test_selection",
+      "prompt": "Can a log transformation repair dependence between observations?",
+      "answer": "No.",
+      "explanation": "Transformations can change distributional shape or variance, but not the sampling design."
+    },
+    {
+      "id": "test_selection_009",
+      "category": "test_selection",
+      "prompt": "Which assumption is relaxed by Welch's t-test compared with the pooled two-sample t-test?",
+      "answer": "Equal population variances.",
+      "explanation": "The groups must still be independent for the independent-samples test."
+    },
+    {
+      "id": "test_selection_010",
+      "category": "test_selection",
+      "prompt": "If each subject contributes measurements at three time points, are the observations independent?",
+      "answer": "No.",
+      "explanation": "Repeated measurements from the same subject require a method that models or accounts for within-subject dependence."
+    },
+    {
+      "id": "test_selection_011",
+      "category": "test_selection",
+      "prompt": "Why is treating three technical wells from one specimen as three biological replicates pseudoreplication?",
+      "answer": "The wells are not independent biological units.",
+      "explanation": "Technical replication measures assay variation within the same specimen."
+    },
+    {
+      "id": "test_selection_012",
+      "category": "test_selection",
+      "prompt": "What values does a paired t-test analyze directly: the two raw groups separately or the within-pair differences?",
+      "answer": "The within-pair differences.",
+      "explanation": "Its normality assumption applies to those differences."
+    },
+    {
+      "id": "nonparametric_001",
+      "category": "nonparametric_methods",
+      "prompt": "Which common rank-based test compares two independent groups?",
+      "answer": "The Mann-Whitney U test, also called the Wilcoxon rank-sum test.",
+      "explanation": "It evaluates relative ranks between independent groups."
+    },
+    {
+      "id": "nonparametric_002",
+      "category": "nonparametric_methods",
+      "prompt": "Which common rank-based test is used for paired observations?",
+      "answer": "The Wilcoxon signed-rank test.",
+      "explanation": "It applies ranks to nonzero paired differences."
+    },
+    {
+      "id": "nonparametric_003",
+      "category": "nonparametric_methods",
+      "prompt": "Which rank-based test is a common alternative to one-way ANOVA for more than two independent groups?",
+      "answer": "The Kruskal-Wallis test.",
+      "explanation": "A significant result indicates that the group distributions are not all the same."
+    },
+    {
+      "id": "nonparametric_004",
+      "category": "nonparametric_methods",
+      "prompt": "Does the Mann-Whitney U test always test only for a difference in medians?",
+      "answer": "No.",
+      "explanation": "It compares rank distributions; a pure median interpretation needs additional shape assumptions."
+    },
+    {
+      "id": "nonparametric_005",
+      "category": "nonparametric_methods",
+      "prompt": "What key condition makes label permutation valid under a null hypothesis?",
+      "answer": "The observations or labels must be exchangeable under the null.",
+      "explanation": "Pairing, clusters, or blocks require restricted permutations that preserve the design."
+    },
+    {
+      "id": "nonparametric_006",
+      "category": "nonparametric_methods",
+      "prompt": "What is the main purpose difference between bootstrap resampling and permutation testing?",
+      "answer": "Bootstrap resampling estimates sampling uncertainty; permutation generates a null distribution for a test.",
+      "explanation": "Bootstrap samples observations with replacement, while permutation typically reassigns labels."
+    },
+    {
+      "id": "nonparametric_007",
+      "category": "nonparametric_methods",
+      "prompt": "Why are rank-based tests often less sensitive to a single extreme magnitude than mean-based tests?",
+      "answer": "They use observation ranks rather than the full numeric magnitudes.",
+      "explanation": "An extreme value changes its rank only within the finite ordering."
+    },
+    {
+      "id": "nonparametric_008",
+      "category": "nonparametric_methods",
+      "prompt": "Does nonparametric mean assumption-free?",
+      "answer": "No.",
+      "explanation": "Nonparametric methods still require conditions such as independence or exchangeability and may need shape assumptions for specific interpretations."
+    },
+    {
+      "id": "categorical_001",
+      "category": "categorical_enrichment",
+      "prompt": "What does a contingency table contain?",
+      "answer": "Counts for combinations of categorical-variable levels.",
+      "explanation": "A 2-by-2 table, for example, cross-classifies two binary variables."
+    },
+    {
+      "id": "categorical_002",
+      "category": "categorical_enrichment",
+      "prompt": "Which test commonly assesses independence in a contingency table when expected counts are sufficiently large?",
+      "answer": "The chi-square test of independence.",
+      "explanation": "Its approximation can be poor with sparse expected counts."
+    },
+    {
+      "id": "categorical_003",
+      "category": "categorical_enrichment",
+      "prompt": "Which exact test is commonly used for a sparse 2-by-2 contingency table?",
+      "answer": "Fisher's exact test.",
+      "explanation": "It conditions on the table margins under its standard formulation."
+    },
+    {
+      "id": "categorical_004",
+      "category": "categorical_enrichment",
+      "prompt": "For a 2-by-2 table with cells `a, b, c, d`, what is the sample odds ratio?",
+      "answer": "`ad / bc`.",
+      "explanation": "It compares the odds across the two groups when the table is arranged conventionally."
+    },
+    {
+      "id": "categorical_005",
+      "category": "categorical_enrichment",
+      "prompt": "What does an odds ratio greater than `1` indicate?",
+      "answer": "Higher odds of the outcome in the numerator or exposed group under the stated table orientation.",
+      "explanation": "The direction depends on how rows and columns are coded."
+    },
+    {
+      "id": "categorical_006",
+      "category": "categorical_enrichment",
+      "prompt": "Which distribution underlies a standard overrepresentation test that draws genes from a finite background without replacement?",
+      "answer": "The hypergeometric distribution.",
+      "explanation": "Fisher's exact test gives an equivalent one-sided calculation for the corresponding 2-by-2 table."
+    },
+    {
+      "id": "categorical_007",
+      "category": "categorical_enrichment",
+      "prompt": "Why must a pathway-enrichment analysis define the tested gene universe carefully?",
+      "answer": "The universe determines the expected overlap under the null.",
+      "explanation": "Including genes that could not have been detected can distort enrichment results."
+    },
+    {
+      "id": "categorical_008",
+      "category": "categorical_enrichment",
+      "prompt": "Does a small enrichment p-value by itself describe the magnitude of enrichment?",
+      "answer": "No.",
+      "explanation": "Report an effect measure such as an odds ratio or observed-to-expected ratio as well."
+    },
+    {
+      "id": "categorical_009",
+      "category": "categorical_enrichment",
+      "prompt": "How is an expected count for one chi-square table cell calculated under independence?",
+      "answer": "`row total × column total / grand total`.",
+      "explanation": "This is the count expected if row and column variables are independent."
+    },
+    {
+      "id": "categorical_010",
+      "category": "categorical_enrichment",
+      "prompt": "If many pathways are tested for enrichment, should their p-values be treated as a single-test result?",
+      "answer": "No; they require multiple-testing control.",
+      "explanation": "Testing many pathways creates many opportunities for small p-values under null hypotheses."
+    },
+    {
+      "id": "correlation_001",
+      "category": "correlation",
+      "prompt": "What kind of association does Pearson correlation measure?",
+      "answer": "Linear association between two numeric variables.",
+      "explanation": "It is based on standardized covariance."
+    },
+    {
+      "id": "correlation_002",
+      "category": "correlation",
+      "prompt": "What kind of association does Spearman correlation measure?",
+      "answer": "Monotonic association based on ranks.",
+      "explanation": "It can capture curved relationships that consistently increase or decrease."
+    },
+    {
+      "id": "correlation_003",
+      "category": "correlation",
+      "prompt": "What is Kendall's tau based on?",
+      "answer": "The balance of concordant and discordant observation pairs.",
+      "explanation": "It is a rank-based measure of monotonic association."
+    },
+    {
+      "id": "correlation_004",
+      "category": "correlation",
+      "prompt": "What is the possible range of a standard correlation coefficient?",
+      "answer": "From `-1` to `1`.",
+      "explanation": "The sign gives direction and the magnitude gives association strength on that coefficient's scale."
+    },
+    {
+      "id": "correlation_005",
+      "category": "correlation",
+      "prompt": "Does Pearson correlation near zero rule out a strong nonlinear relationship?",
+      "answer": "No.",
+      "explanation": "Opposing slopes in a curved relationship can cancel in a linear summary."
+    },
+    {
+      "id": "correlation_006",
+      "category": "correlation",
+      "prompt": "Does correlation alone establish causation?",
+      "answer": "No.",
+      "explanation": "Confounding, reverse causation, and selection can produce associations without the proposed causal effect."
+    },
+    {
+      "id": "correlation_007",
+      "category": "correlation",
+      "prompt": "Which is usually more sensitive to a single extreme outlier: Pearson or Spearman correlation?",
+      "answer": "Pearson correlation.",
+      "explanation": "Pearson uses raw magnitudes, whereas Spearman uses ranks."
+    },
+    {
+      "id": "correlation_008",
+      "category": "correlation",
+      "prompt": "What can happen if two genes are both strongly affected by batch?",
+      "answer": "They can appear correlated even without a direct biological relationship.",
+      "explanation": "Batch acts as a shared confounder."
+    },
+    {
+      "id": "correlation_009",
+      "category": "correlation",
+      "prompt": "What usually happens to an observed correlation when the sampled range of one variable is severely restricted?",
+      "answer": "Its magnitude is often attenuated.",
+      "explanation": "Restriction of range removes variation needed to reveal the association."
+    },
+    {
+      "id": "correlation_010",
+      "category": "correlation",
+      "prompt": "Why can relative-abundance data produce spurious correlations between features?",
+      "answer": "The components are constrained to a fixed total.",
+      "explanation": "Increasing one component can force others to decrease proportionally even without direct interaction."
+    },
+    {
+      "id": "regression_001",
+      "category": "regression_glm",
+      "prompt": "In simple linear regression, what does the intercept represent?",
+      "answer": "The expected outcome when the predictor equals zero.",
+      "explanation": "It may not be scientifically meaningful if zero is outside the observed predictor range."
+    },
+    {
+      "id": "regression_002",
+      "category": "regression_glm",
+      "prompt": "In simple linear regression, what does the slope represent?",
+      "answer": "The expected change in the outcome for a one-unit increase in the predictor.",
+      "explanation": "The interpretation assumes the specified linear relationship."
+    },
+    {
+      "id": "regression_003",
+      "category": "regression_glm",
+      "prompt": "What is a regression residual?",
+      "answer": "The observed outcome minus its fitted value.",
+      "explanation": "Residual diagnostics assess patterns left unexplained by the model."
+    },
+    {
+      "id": "regression_004",
+      "category": "regression_glm",
+      "prompt": "What does `R²` summarize in an ordinary linear regression?",
+      "answer": "The proportion of observed outcome variance explained by the fitted model in that dataset.",
+      "explanation": "It does not establish causality or out-of-sample performance."
+    },
+    {
+      "id": "regression_005",
+      "category": "regression_glm",
+      "prompt": "Why can adjusted `R²` decrease when an unhelpful predictor is added?",
+      "answer": "It penalizes model complexity.",
+      "explanation": "Ordinary `R²` cannot decrease merely from adding predictors."
+    },
+    {
+      "id": "regression_006",
+      "category": "regression_glm",
+      "prompt": "For a categorical predictor in a regression model, what does the reference level provide?",
+      "answer": "The baseline against which other level coefficients are compared.",
+      "explanation": "Changing the reference changes coefficient interpretation but not the model's fitted values."
+    },
+    {
+      "id": "regression_007",
+      "category": "regression_glm",
+      "prompt": "In a multiple regression, how is one predictor's coefficient interpreted?",
+      "answer": "As its association with the outcome holding the other modeled predictors constant.",
+      "explanation": "This is an adjusted association under the model, not automatically a causal effect."
+    },
+    {
+      "id": "regression_008",
+      "category": "regression_glm",
+      "prompt": "What does an interaction term test?",
+      "answer": "Whether one predictor's effect changes across values or levels of another predictor.",
+      "explanation": "With an interaction present, main effects are conditional on the other predictor's reference or zero value."
+    },
+    {
+      "id": "regression_009",
+      "category": "regression_glm",
+      "prompt": "What is a common consequence of strong multicollinearity?",
+      "answer": "Inflated coefficient standard errors and unstable individual coefficient estimates.",
+      "explanation": "Correlated predictors make their separate contributions difficult to identify."
+    },
+    {
+      "id": "regression_010",
+      "category": "regression_glm",
+      "prompt": "What quantity is modeled linearly in ordinary logistic regression?",
+      "answer": "The log odds of the binary outcome.",
+      "explanation": "The logit link maps probabilities between zero and one to the real line."
+    },
+    {
+      "id": "regression_011",
+      "category": "regression_glm",
+      "prompt": "What does exponentiating a logistic-regression coefficient produce?",
+      "answer": "An odds ratio for a one-unit predictor change, conditional on other modeled predictors.",
+      "explanation": "For a categorical predictor, it is relative to the reference level."
+    },
+    {
+      "id": "regression_012",
+      "category": "regression_glm",
+      "prompt": "What link function is commonly used in Poisson and negative-binomial count regression?",
+      "answer": "The log link.",
+      "explanation": "It keeps fitted means positive and makes coefficients multiplicative after exponentiation."
+    },
+    {
+      "id": "regression_013",
+      "category": "regression_glm",
+      "prompt": "What is the purpose of an offset in a count regression?",
+      "answer": "To account for a known exposure or opportunity for counts.",
+      "explanation": "Examples include observation time or an effective library-size factor."
+    },
+    {
+      "id": "regression_014",
+      "category": "regression_glm",
+      "prompt": "What does it mean for a design matrix to be full rank?",
+      "answer": "Its modeled coefficients are linearly identifiable without exact column redundancy.",
+      "explanation": "Perfect confounding or redundant indicators make a design matrix rank-deficient."
+    },
+    {
+      "id": "multiple_001",
+      "category": "multiple_testing",
+      "prompt": "At `alpha = 0.05`, about how many false positives are expected on average among 1,000 true null tests if each is tested separately?",
+      "answer": "About `50`.",
+      "explanation": "The expected count is `1000 × 0.05` when the individual null-test error rate is 0.05."
+    },
+    {
+      "id": "multiple_002",
+      "category": "multiple_testing",
+      "prompt": "What does family-wise error rate control?",
+      "answer": "The probability of making at least one false rejection in a family of tests.",
+      "explanation": "It is stricter than controlling the expected false-discovery proportion."
+    },
+    {
+      "id": "multiple_003",
+      "category": "multiple_testing",
+      "prompt": "What does false discovery rate control?",
+      "answer": "The expected proportion of false rejections among all rejections, under the procedure's conditions.",
+      "explanation": "The false-discovery proportion is defined as zero when there are no rejections."
+    },
+    {
+      "id": "multiple_004",
+      "category": "multiple_testing",
+      "prompt": "What Bonferroni per-test threshold corresponds to family-wise `alpha = 0.05` across 100 tests?",
+      "answer": "`0.0005`.",
+      "explanation": "Bonferroni divides the family-wise threshold by the number of tests."
+    },
+    {
+      "id": "multiple_005",
+      "category": "multiple_testing",
+      "prompt": "What is the first ordering step in the Benjamini-Hochberg procedure?",
+      "answer": "Sort the raw p-values from smallest to largest.",
+      "explanation": "The ordered p-values are compared with rank-dependent thresholds."
+    },
+    {
+      "id": "multiple_006",
+      "category": "multiple_testing",
+      "prompt": "To declare significance at FDR 5%, which value is compared with `0.05`: the raw p-value or the BH-adjusted p-value?",
+      "answer": "The BH-adjusted p-value.",
+      "explanation": "The adjusted value incorporates the multiplicity of the tested family."
+    },
+    {
+      "id": "multiple_007",
+      "category": "multiple_testing",
+      "prompt": "Can a raw p-value be smaller than its corresponding Bonferroni-adjusted p-value?",
+      "answer": "Yes.",
+      "explanation": "Bonferroni adjustment multiplies the raw p-value by the number of tests, capped at one."
+    },
+    {
+      "id": "multiple_008",
+      "category": "multiple_testing",
+      "prompt": "What does a q-value commonly summarize for one test?",
+      "answer": "The minimum estimated false discovery rate at which that test would be called significant.",
+      "explanation": "Its exact estimation depends on the q-value procedure."
+    },
+    {
+      "id": "multiple_009",
+      "category": "multiple_testing",
+      "prompt": "Does an FDR target of 5% mean every reported gene has a 5% probability of being a false positive?",
+      "answer": "No.",
+      "explanation": "FDR is a property of the set of rejections over repeated use, not an identical per-gene posterior probability."
+    },
+    {
+      "id": "multiple_010",
+      "category": "multiple_testing",
+      "prompt": "If an FDR-controlling analysis makes zero discoveries, must 5% of those discoveries be false?",
+      "answer": "No.",
+      "explanation": "There are no discoveries, so the false-discovery proportion is defined as zero."
+    },
+    {
+      "id": "multiple_011",
+      "category": "multiple_testing",
+      "prompt": "Why can filtering genes by very low mean abundance before testing improve power when the filter is valid?",
+      "answer": "It removes tests with little chance of detection and reduces the multiple-testing burden.",
+      "explanation": "The filter must not use the same group-difference signal being tested under the null."
+    },
+    {
+      "id": "multiple_012",
+      "category": "multiple_testing",
+      "prompt": "Why is filtering genes because they show a large observed group difference before testing problematic?",
+      "answer": "It selects on the test signal and invalidates ordinary p-value and multiplicity interpretations.",
+      "explanation": "The same random differences influence both selection and testing."
+    },
+    {
+      "id": "multiple_013",
+      "category": "multiple_testing",
+      "prompt": "Do pathway-enrichment analyses need multiple-testing correction when hundreds of pathways are tested?",
+      "answer": "Yes.",
+      "explanation": "Each pathway contributes another opportunity for a small null p-value."
+    },
+    {
+      "id": "multiple_014",
+      "category": "multiple_testing",
+      "prompt": "Why should a differential-expression result report both adjusted p-value and effect size?",
+      "answer": "They answer different questions: multiplicity-aware evidence and effect magnitude.",
+      "explanation": "A tiny adjusted p-value does not guarantee a biologically important change."
+    },
+    {
+      "id": "design_001",
+      "category": "experimental_design",
+      "prompt": "What is a biological replicate?",
+      "answer": "An independently sampled biological unit representing biological variation.",
+      "explanation": "Examples include different animals, patients, or independently grown cultures."
+    },
+    {
+      "id": "design_002",
+      "category": "experimental_design",
+      "prompt": "What is a technical replicate?",
+      "answer": "A repeated measurement or processing of the same biological unit.",
+      "explanation": "It primarily characterizes measurement or processing variability."
+    },
+    {
+      "id": "design_003",
+      "category": "experimental_design",
+      "prompt": "What is the experimental unit?",
+      "answer": "The smallest unit independently assigned to a treatment or condition.",
+      "explanation": "The experimental unit determines the independent replication level."
+    },
+    {
+      "id": "design_004",
+      "category": "experimental_design",
+      "prompt": "What is the main purpose of random assignment to treatment?",
+      "answer": "To balance known and unknown confounders in expectation and support causal inference.",
+      "explanation": "Random sampling and random treatment assignment solve different problems."
+    },
+    {
+      "id": "design_005",
+      "category": "experimental_design",
+      "prompt": "What is blocking in an experimental design?",
+      "answer": "Grouping similar units and randomizing or comparing treatments within those groups.",
+      "explanation": "Blocking can reduce nuisance variability such as plate or litter effects."
+    },
+    {
+      "id": "design_006",
+      "category": "experimental_design",
+      "prompt": "Why is a balanced design useful?",
+      "answer": "It reduces entanglement between condition and nuisance factors and often improves precision.",
+      "explanation": "Balance is especially valuable across batches and other blocks."
+    },
+    {
+      "id": "design_007",
+      "category": "experimental_design",
+      "prompt": "What problem occurs if every control sample is processed in batch 1 and every treated sample in batch 2?",
+      "answer": "Condition is perfectly confounded with batch.",
+      "explanation": "The data cannot identify separate condition and batch effects."
+    },
+    {
+      "id": "design_008",
+      "category": "experimental_design",
+      "prompt": "Can a statistical model reliably separate condition from batch when they are perfectly confounded?",
+      "answer": "No.",
+      "explanation": "No model can recover information absent from the design without additional assumptions or data."
+    },
+    {
+      "id": "design_009",
+      "category": "experimental_design",
+      "prompt": "When batch and condition are not perfectly confounded, how is a measured batch effect commonly handled in a differential model?",
+      "answer": "Include batch as a covariate in the design.",
+      "explanation": "This estimates the condition effect while accounting for modeled batch differences."
+    },
+    {
+      "id": "design_010",
+      "category": "experimental_design",
+      "prompt": "Why should repeated measurements from one subject retain the subject identifier in the analysis?",
+      "answer": "To account for within-subject dependence or pairing.",
+      "explanation": "Treating repeated measurements as independent underestimates or misstates uncertainty."
+    },
+    {
+      "id": "design_011",
+      "category": "experimental_design",
+      "prompt": "For estimating a treatment effect across organisms, can deeper sequencing of the same organisms replace additional organisms?",
+      "answer": "No.",
+      "explanation": "Sequencing depth reduces measurement noise but does not add independent biological replication."
+    },
+    {
+      "id": "design_012",
+      "category": "experimental_design",
+      "prompt": "What three major quantities are normally needed for a prospective power calculation?",
+      "answer": "A target effect size, variability, and the desired error rates or power.",
+      "explanation": "The exact calculation also depends on the planned test and design."
+    },
+    {
+      "id": "design_013",
+      "category": "experimental_design",
+      "prompt": "What bias can blinding sample labels during subjective measurement help prevent?",
+      "answer": "Observer or measurement bias linked to expected group identity.",
+      "explanation": "Blinding does not replace randomization, but it protects outcome assessment."
+    },
+    {
+      "id": "design_014",
+      "category": "experimental_design",
+      "prompt": "How should treatment groups be placed across sequencing lanes or plates when possible?",
+      "answer": "Distribute and randomize them across lanes or plates rather than segregating them.",
+      "explanation": "This prevents processing unit from becoming confounded with treatment."
+    },
+    {
+      "id": "omics_001",
+      "category": "omics_statistics",
+      "prompt": "Why are raw read counts not directly comparable across RNA-seq samples with very different library sizes?",
+      "answer": "A larger library creates more counts even at the same underlying relative abundance.",
+      "explanation": "Count models therefore incorporate sample-specific normalization or exposure factors."
+    },
+    {
+      "id": "omics_002",
+      "category": "omics_statistics",
+      "prompt": "Should TPM values usually be supplied as input to differential-expression methods that model raw counts with a negative binomial distribution?",
+      "answer": "No.",
+      "explanation": "Those methods expect integer counts and estimate their own library-composition normalization."
+    },
+    {
+      "id": "omics_003",
+      "category": "omics_statistics",
+      "prompt": "What does counts per million primarily normalize for?",
+      "answer": "Library size.",
+      "explanation": "CPM does not by itself model biological variability or correct all composition effects."
+    },
+    {
+      "id": "omics_004",
+      "category": "omics_statistics",
+      "prompt": "What is the purpose of DESeq2's median-of-ratios size factors?",
+      "answer": "To estimate sample-specific scaling factors for library composition and depth.",
+      "explanation": "The normalized counts divide raw counts by those factors."
+    },
+    {
+      "id": "omics_005",
+      "category": "omics_statistics",
+      "prompt": "What is TMM normalization designed to estimate in edgeR-style workflows?",
+      "answer": "Relative sample scaling factors after trimming extreme expression and log-ratio values.",
+      "explanation": "It reduces distortion from library composition differences."
+    },
+    {
+      "id": "omics_006",
+      "category": "omics_statistics",
+      "prompt": "Which distribution is commonly used to model gene-level RNA-seq counts across biological replicates?",
+      "answer": "The negative-binomial distribution.",
+      "explanation": "It accommodates mean-dependent variance and biological overdispersion."
+    },
+    {
+      "id": "omics_007",
+      "category": "omics_statistics",
+      "prompt": "What does negative-binomial dispersion represent in RNA-seq analysis?",
+      "answer": "Extra variability beyond Poisson sampling at a given mean.",
+      "explanation": "It captures biological and other between-replicate heterogeneity."
+    },
+    {
+      "id": "omics_008",
+      "category": "omics_statistics",
+      "prompt": "Why is constant-variance normal modeling often poor for raw RNA-seq counts?",
+      "answer": "Count variance changes strongly with the mean and counts are discrete.",
+      "explanation": "Negative-binomial models explicitly represent this mean-variance relationship."
+    },
+    {
+      "id": "omics_009",
+      "category": "omics_statistics",
+      "prompt": "Can thousands of genes measured in one control and one treated sample substitute for biological replicates?",
+      "answer": "No.",
+      "explanation": "Genes are features, not independent replicate samples for estimating between-sample biological variability."
+    },
+    {
+      "id": "omics_010",
+      "category": "omics_statistics",
+      "prompt": "What does a negative log2 fold change mean when the contrast is treated versus control?",
+      "answer": "Expression is lower in treated than in control on the fitted scale.",
+      "explanation": "The sign always depends on the stated numerator and reference orientation."
+    },
+    {
+      "id": "omics_011",
+      "category": "omics_statistics",
+      "prompt": "Why are noisy log2 fold-change estimates sometimes shrunk toward zero?",
+      "answer": "To stabilize large, uncertain estimates, especially for low-information genes.",
+      "explanation": "Shrinkage improves effect-size ranking and interpretation but does not create information."
+    },
+    {
+      "id": "omics_012",
+      "category": "omics_statistics",
+      "prompt": "What is the purpose of independent filtering in differential-expression analysis?",
+      "answer": "To remove features with little detection power using a filter independent of the null test statistic.",
+      "explanation": "This can increase discoveries by reducing the multiple-testing burden."
+    },
+    {
+      "id": "omics_013",
+      "category": "omics_statistics",
+      "prompt": "What are the usual axes of an MA plot for differential expression?",
+      "answer": "Mean abundance on the x-axis and log fold change on the y-axis.",
+      "explanation": "The plot reveals abundance-dependent effect patterns and variability."
+    },
+    {
+      "id": "omics_014",
+      "category": "omics_statistics",
+      "prompt": "What are the usual axes of a volcano plot?",
+      "answer": "Effect size such as log2 fold change on the x-axis and `-log10(p-value)` or `-log10(adjusted p-value)` on the y-axis.",
+      "explanation": "The chosen significance measure should be labeled explicitly."
+    },
+    {
+      "id": "diagnostics_001",
+      "category": "diagnostics",
+      "prompt": "What does a logarithmic transformation do to large positive values relative to small ones?",
+      "answer": "It compresses their scale more strongly.",
+      "explanation": "This can reduce right skew and multiplicative heteroscedasticity."
+    },
+    {
+      "id": "diagnostics_002",
+      "category": "diagnostics",
+      "prompt": "Why is `log(1 + x)` sometimes used instead of `log(x)` for nonnegative data?",
+      "answer": "It is defined at zero.",
+      "explanation": "The added pseudocount also changes low-value differences, so it is not neutral."
+    },
+    {
+      "id": "diagnostics_003",
+      "category": "diagnostics",
+      "prompt": "What is the goal of a variance-stabilizing transformation for count data?",
+      "answer": "To make variability less dependent on the mean.",
+      "explanation": "This is useful for visualization, clustering, and sample-level quality assessment."
+    },
+    {
+      "id": "diagnostics_004",
+      "category": "diagnostics",
+      "prompt": "What model feature is a residual Q-Q plot commonly used to assess?",
+      "answer": "Whether residuals approximately follow the assumed reference distribution, often normality.",
+      "explanation": "Systematic tail or curvature departures signal a mismatch."
+    },
+    {
+      "id": "diagnostics_005",
+      "category": "diagnostics",
+      "prompt": "What can a funnel shape in a residual-versus-fitted plot indicate?",
+      "answer": "Heteroscedasticity, meaning nonconstant residual variance.",
+      "explanation": "The spread of residuals changes across fitted values."
+    },
+    {
+      "id": "diagnostics_006",
+      "category": "diagnostics",
+      "prompt": "Which missingness mechanism means missingness depends on unobserved values even after conditioning on observed data?",
+      "answer": "Missing not at random, or MNAR.",
+      "explanation": "MNAR generally requires explicit sensitivity assumptions because observed data alone cannot verify the mechanism."
+    },
+    {
+      "id": "diagnostics_007",
+      "category": "diagnostics",
+      "prompt": "What common problem does simple mean imputation create for a variable's variance?",
+      "answer": "It underestimates the variance.",
+      "explanation": "Replacing missing values with one central value adds no natural spread and can distort associations."
+    },
+    {
+      "id": "diagnostics_008",
+      "category": "diagnostics",
+      "prompt": "Should a sample be deleted automatically just because it appears as a PCA outlier?",
+      "answer": "No.",
+      "explanation": "Investigate sample identity, quality, batch, and biological plausibility using prespecified criteria before exclusion."
+    },
+    {
+      "id": "survival_001",
+      "category": "survival_analysis",
+      "prompt": "What does right censoring mean in survival analysis?",
+      "answer": "The event time is known only to exceed the last observed follow-up time.",
+      "explanation": "The event was not observed before follow-up ended or the subject left observation."
+    },
+    {
+      "id": "survival_002",
+      "category": "survival_analysis",
+      "prompt": "What does a Kaplan-Meier curve estimate?",
+      "answer": "The survival probability over time.",
+      "explanation": "It accounts for right-censored observations under noninformative-censoring assumptions."
+    },
+    {
+      "id": "survival_003",
+      "category": "survival_analysis",
+      "prompt": "What does the log-rank test compare between groups?",
+      "answer": "Their survival experience or survival curves over time.",
+      "explanation": "It compares observed and expected event counts across event times."
+    },
+    {
+      "id": "survival_004",
+      "category": "survival_analysis",
+      "prompt": "What does a Cox proportional-hazards model relate to predictors?",
+      "answer": "The hazard, or instantaneous event rate among those still at risk.",
+      "explanation": "Exponentiated coefficients are hazard ratios."
+    },
+    {
+      "id": "survival_005",
+      "category": "survival_analysis",
+      "prompt": "What does a hazard ratio greater than `1` indicate for the numerator group?",
+      "answer": "A higher instantaneous event hazard, given the model and coding.",
+      "explanation": "A hazard ratio is not the same as a ratio of median survival times or cumulative risks."
+    },
+    {
+      "id": "survival_006",
+      "category": "survival_analysis",
+      "prompt": "What does the proportional-hazards assumption require in a basic Cox model?",
+      "answer": "Hazard ratios between covariate patterns remain constant over time.",
+      "explanation": "Time-varying effects require an extended model or another approach."
+    },
+    {
+      "id": "prediction_001",
+      "category": "predictive_evaluation",
+      "prompt": "Why must a final test set remain unused during model fitting and tuning?",
+      "answer": "So it provides an unbiased estimate of performance on unseen data.",
+      "explanation": "Using it to choose the model leaks information and makes performance optimistic."
+    },
+    {
+      "id": "prediction_002",
+      "category": "predictive_evaluation",
+      "prompt": "What does k-fold cross-validation rotate across folds?",
+      "answer": "Which subset is held out for validation while the remaining subsets train the model.",
+      "explanation": "Each observation is held out once across the k folds."
+    },
+    {
+      "id": "prediction_003",
+      "category": "predictive_evaluation",
+      "prompt": "What is data leakage in predictive modeling?",
+      "answer": "Information unavailable at real prediction time enters model training, preprocessing, or selection.",
+      "explanation": "Leakage produces overly optimistic validation performance."
+    },
+    {
+      "id": "prediction_004",
+      "category": "predictive_evaluation",
+      "prompt": "Why can accuracy be misleading when only 1% of samples are positive?",
+      "answer": "Predicting every sample as negative already gives 99% accuracy.",
+      "explanation": "Class-specific metrics are needed to reveal failure on the rare class."
+    },
+    {
+      "id": "prediction_005",
+      "category": "predictive_evaluation",
+      "prompt": "What does ROC AUC equal in probabilistic ranking terms?",
+      "answer": "The probability that a randomly chosen positive receives a higher score than a randomly chosen negative.",
+      "explanation": "It measures ranking discrimination across thresholds, not calibration."
+    },
+    {
+      "id": "prediction_006",
+      "category": "predictive_evaluation",
+      "prompt": "Why is a precision-recall curve often more informative than an ROC curve for a very rare positive class?",
+      "answer": "It focuses on positive-class retrieval and the false positives among predicted positives.",
+      "explanation": "ROC specificity can look strong when true negatives are extremely abundant."
+    }
+  ]
+}

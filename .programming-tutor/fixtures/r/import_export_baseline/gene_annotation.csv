@@ -1,0 +1,9 @@
+gene_id,gene_symbol,biotype,chromosome,length_bp
+ENSMUSG00000064341,mt-Co1,protein_coding,MT,1542
+ENSMUSG00000064345,mt-Nd2,protein_coding,MT,1044
+ENSMUSG00000076431,Otof,protein_coding,5,6005
+ENSMUSG00000024553,Slc17a8,protein_coding,10,2869
+ENSMUSG00000030798,Myo6,protein_coding,9,3786
+ENSMUSG00000040451,Pou4f3,protein_coding,18,1902
+ENSMUSG00000049668,Ocm,protein_coding,12,645
+ENSMUSG00000031134,Tmc1,protein_coding,19,2771

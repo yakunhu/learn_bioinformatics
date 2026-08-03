@@ -1,0 +1,1338 @@
+{
+  "schema_version": 1,
+  "language": "python",
+  "categories": [
+    {
+      "id": "types_operators_truthiness",
+      "label": "Types, operators, and truthiness",
+      "question_bank_size": 10
+    },
+    {
+      "id": "strings_regex",
+      "label": "Strings and regular expressions",
+      "question_bank_size": 12
+    },
+    {
+      "id": "collections",
+      "label": "Collections",
+      "question_bank_size": 18
+    },
+    {
+      "id": "control_flow",
+      "label": "Control flow",
+      "question_bank_size": 10
+    },
+    {
+      "id": "functions",
+      "label": "Functions",
+      "question_bank_size": 14
+    },
+    {
+      "id": "general_python_mechanics",
+      "label": "General Python mechanics",
+      "question_bank_size": 12
+    },
+    {
+      "id": "pipeline_standard_library",
+      "label": "Pipeline-oriented standard library",
+      "question_bank_size": 16
+    },
+    {
+      "id": "numpy",
+      "label": "NumPy",
+      "question_bank_size": 18
+    },
+    {
+      "id": "pandas",
+      "label": "pandas",
+      "question_bank_size": 30
+    },
+    {
+      "id": "biopython",
+      "label": "Biopython",
+      "question_bank_size": 12
+    },
+    {
+      "id": "pysam",
+      "label": "pysam",
+      "question_bank_size": 8
+    },
+    {
+      "id": "scipy_stats",
+      "label": "SciPy statistics",
+      "question_bank_size": 6
+    },
+    {
+      "id": "matplotlib_seaborn",
+      "label": "Matplotlib and Seaborn",
+      "question_bank_size": 8
+    },
+    {
+      "id": "pytest",
+      "label": "pytest",
+      "question_bank_size": 6
+    }
+  ],
+  "questions": [
+    {
+      "id": "types_001",
+      "category": "types_operators_truthiness",
+      "prompt": "What type does `type(3)` report?",
+      "answer": "`int`.",
+      "explanation": "An integer literal without a decimal point has type `int`."
+    },
+    {
+      "id": "types_002",
+      "category": "types_operators_truthiness",
+      "prompt": "In Python 3, what value and type result from `3 / 2`?",
+      "answer": "`1.5`, a `float`.",
+      "explanation": "The `/` operator performs true division and returns a floating-point result."
+    },
+    {
+      "id": "types_003",
+      "category": "types_operators_truthiness",
+      "prompt": "What does `bool(\"\")` return?",
+      "answer": "`False`.",
+      "explanation": "An empty string is falsy."
+    },
+    {
+      "id": "types_004",
+      "category": "types_operators_truthiness",
+      "prompt": "What does `bool([0])` return?",
+      "answer": "`True`.",
+      "explanation": "A non-empty list is truthy even when its only element is falsy."
+    },
+    {
+      "id": "types_005",
+      "category": "types_operators_truthiness",
+      "prompt": "What is the distinction between `==` and `is`?",
+      "answer": "`==` compares values; `is` compares object identity.",
+      "explanation": "Use `is` for identity checks such as `x is None`, not ordinary value equality."
+    },
+    {
+      "id": "types_006",
+      "category": "types_operators_truthiness",
+      "prompt": "What is the idiomatic expression for checking whether `result` is `None`?",
+      "answer": "`result is None`.",
+      "explanation": "`None` is a singleton, so identity comparison is the standard check."
+    },
+    {
+      "id": "types_007",
+      "category": "types_operators_truthiness",
+      "prompt": "What does `5 in [1, 5, 9]` return?",
+      "answer": "`True`.",
+      "explanation": "The `in` operator tests membership."
+    },
+    {
+      "id": "types_008",
+      "category": "types_operators_truthiness",
+      "prompt": "What value does `2 ** 3` produce?",
+      "answer": "`8`.",
+      "explanation": "`**` is the exponentiation operator."
+    },
+    {
+      "id": "types_009",
+      "category": "types_operators_truthiness",
+      "prompt": "What value does `7 // 2` produce?",
+      "answer": "`3`.",
+      "explanation": "`//` performs floor division."
+    },
+    {
+      "id": "types_010",
+      "category": "types_operators_truthiness",
+      "prompt": "What value does `7 % 2` produce?",
+      "answer": "`1`.",
+      "explanation": "`%` returns the remainder after division."
+    },
+    {
+      "id": "strings_001",
+      "category": "strings_regex",
+      "prompt": "What does `\"ACGT\"[1:3]` return?",
+      "answer": "`\"CG\"`.",
+      "explanation": "A slice includes the start index and excludes the stop index."
+    },
+    {
+      "id": "strings_002",
+      "category": "strings_regex",
+      "prompt": "What does `\"ATGC\"[::-1]` return?",
+      "answer": "`\"CGTA\"`.",
+      "explanation": "A slice step of `-1` traverses the string backward."
+    },
+    {
+      "id": "strings_003",
+      "category": "strings_regex",
+      "prompt": "What does `\"S1,S2,S3\".split(\",\")` return?",
+      "answer": "`[\"S1\", \"S2\", \"S3\"]`.",
+      "explanation": "`split` returns a list of substrings separated by the delimiter."
+    },
+    {
+      "id": "strings_004",
+      "category": "strings_regex",
+      "prompt": "What does `\"gene_id\".upper()` return?",
+      "answer": "`\"GENE_ID\"`.",
+      "explanation": "`upper` returns an uppercase copy of the string."
+    },
+    {
+      "id": "strings_005",
+      "category": "strings_regex",
+      "prompt": "If `sample = \"S1\"`, what does `f\"sample={sample}\"` produce?",
+      "answer": "`\"sample=S1\"`.",
+      "explanation": "An f-string evaluates expressions inside braces."
+    },
+    {
+      "id": "strings_006",
+      "category": "strings_regex",
+      "prompt": "Can an individual character in a Python string be changed by assignment, such as `seq[0] = \"T\"`?",
+      "answer": "No; strings are immutable.",
+      "explanation": "Create a new string rather than modifying an existing string in place."
+    },
+    {
+      "id": "strings_007",
+      "category": "strings_regex",
+      "prompt": "What does `\"  TP53\\n\".strip()` return?",
+      "answer": "`\"TP53\"`.",
+      "explanation": "`strip` removes leading and trailing whitespace."
+    },
+    {
+      "id": "strings_008",
+      "category": "strings_regex",
+      "prompt": "What does `\"AATA\".replace(\"A\", \"T\")` return?",
+      "answer": "`\"TTTT\"`.",
+      "explanation": "Without a count argument, `replace` substitutes every occurrence."
+    },
+    {
+      "id": "strings_009",
+      "category": "strings_regex",
+      "prompt": "Which `re` function checks for a match anywhere in a string: `re.search` or `re.fullmatch`?",
+      "answer": "`re.search`.",
+      "explanation": "`re.fullmatch` requires the entire string to match."
+    },
+    {
+      "id": "strings_010",
+      "category": "strings_regex",
+      "prompt": "What does `re.findall(r\"\\d+\", \"S1 and S23\")` return?",
+      "answer": "`[\"1\", \"23\"]`.",
+      "explanation": "`findall` returns every non-overlapping run of one or more digits."
+    },
+    {
+      "id": "strings_011",
+      "category": "strings_regex",
+      "prompt": "Why are raw strings such as `r\"\\d+\"` commonly used for regular expressions?",
+      "answer": "They keep backslashes from being interpreted as ordinary Python escape sequences.",
+      "explanation": "This makes regex patterns containing backslashes easier to write correctly."
+    },
+    {
+      "id": "strings_012",
+      "category": "strings_regex",
+      "prompt": "What does `\"gene=TP53\".partition(\"=\")` return?",
+      "answer": "`(\"gene\", \"=\", \"TP53\")`.",
+      "explanation": "`partition` returns the text before the separator, the separator, and the text after it."
+    },
+    {
+      "id": "collections_001",
+      "category": "collections",
+      "prompt": "What does `[10, 20, 30][-1]` return?",
+      "answer": "`30`.",
+      "explanation": "Index `-1` selects the final element."
+    },
+    {
+      "id": "collections_002",
+      "category": "collections",
+      "prompt": "What value is returned by `items.append(\"gene\")`?",
+      "answer": "`None`.",
+      "explanation": "`append` mutates the list in place and does not return the list."
+    },
+    {
+      "id": "collections_003",
+      "category": "collections",
+      "prompt": "Starting with `x = [1, 2]`, what is `x` after `x.extend([3, 4])`?",
+      "answer": "`[1, 2, 3, 4]`.",
+      "explanation": "`extend` appends each element from the supplied iterable."
+    },
+    {
+      "id": "collections_004",
+      "category": "collections",
+      "prompt": "Can `coords = (10, 20)` be changed with `coords[0] = 5`?",
+      "answer": "No; tuples are immutable.",
+      "explanation": "Tuple elements cannot be replaced after creation."
+    },
+    {
+      "id": "collections_005",
+      "category": "collections",
+      "prompt": "Which expression creates a one-element tuple containing `\"S1\"`: `(\"S1\")` or `(\"S1\",)`?",
+      "answer": "`(\"S1\",)`.",
+      "explanation": "The trailing comma creates the tuple; parentheses alone only group an expression."
+    },
+    {
+      "id": "collections_006",
+      "category": "collections",
+      "prompt": "What set results from `set([\"A\", \"A\", \"B\"])`?",
+      "answer": "`{\"A\", \"B\"}`.",
+      "explanation": "A set retains one instance of each distinct hashable value."
+    },
+    {
+      "id": "collections_007",
+      "category": "collections",
+      "prompt": "What does `list({\"gene\": \"TP53\", \"score\": 4}.keys())` contain, in insertion order?",
+      "answer": "`[\"gene\", \"score\"]`.",
+      "explanation": "Dictionary iteration preserves insertion order in modern Python."
+    },
+    {
+      "id": "collections_008",
+      "category": "collections",
+      "prompt": "What does `{}.get(\"missing\")` return when no default is supplied?",
+      "answer": "`None`.",
+      "explanation": "`dict.get` returns its default value, which defaults to `None`, instead of raising `KeyError`."
+    },
+    {
+      "id": "collections_009",
+      "category": "collections",
+      "prompt": "For `d = {\"S1\": 10}`, what does `\"S1\" in d` test?",
+      "answer": "Whether `\"S1\"` is a key in the dictionary.",
+      "explanation": "Dictionary membership tests keys, not values."
+    },
+    {
+      "id": "collections_010",
+      "category": "collections",
+      "prompt": "Is `copied = original.copy()` a deep copy of nested objects?",
+      "answer": "No; it is a shallow copy.",
+      "explanation": "The outer container is copied, but nested mutable objects are still shared."
+    },
+    {
+      "id": "collections_011",
+      "category": "collections",
+      "prompt": "For a list `x`, does `y = x[:]` create a new outer list?",
+      "answer": "Yes.",
+      "explanation": "A full list slice creates a shallow copy of the list."
+    },
+    {
+      "id": "collections_012",
+      "category": "collections",
+      "prompt": "Why can `matrix = [[0] * 3] * 2` be surprising when one inner list is modified?",
+      "answer": "Both rows refer to the same inner list.",
+      "explanation": "List multiplication repeats references rather than constructing independent nested lists."
+    },
+    {
+      "id": "collections_013",
+      "category": "collections",
+      "prompt": "Does `sorted(values)` mutate `values`?",
+      "answer": "No; it returns a new sorted list.",
+      "explanation": "`sorted` accepts any iterable and leaves the original object unchanged."
+    },
+    {
+      "id": "collections_014",
+      "category": "collections",
+      "prompt": "What does `values.sort()` return?",
+      "answer": "`None`.",
+      "explanation": "`list.sort` mutates the list in place."
+    },
+    {
+      "id": "collections_015",
+      "category": "collections",
+      "prompt": "In Python 3, what kind of object does `zip([1, 2], [\"A\", \"B\"])` return?",
+      "answer": "A lazy `zip` iterator.",
+      "explanation": "Convert it to `list` if all paired tuples are needed at once."
+    },
+    {
+      "id": "collections_016",
+      "category": "collections",
+      "prompt": "What pairs are produced by `enumerate([\"A\", \"B\"], start=1)`?",
+      "answer": "`(1, \"A\")` and `(2, \"B\")`.",
+      "explanation": "`enumerate` yields index-value pairs beginning at the requested start."
+    },
+    {
+      "id": "collections_017",
+      "category": "collections",
+      "prompt": "For `d = {\"gene\": \"TP53\"}`, what does `d.pop(\"gene\")` return?",
+      "answer": "`\"TP53\"`.",
+      "explanation": "`pop` removes the key and returns its associated value."
+    },
+    {
+      "id": "collections_018",
+      "category": "collections",
+      "prompt": "What does `{1, 2, 3} & {2, 3, 4}` return?",
+      "answer": "`{2, 3}`.",
+      "explanation": "The `&` operator computes set intersection."
+    },
+    {
+      "id": "control_001",
+      "category": "control_flow",
+      "prompt": "What integers are produced by `range(2, 5)`?",
+      "answer": "`2`, `3`, and `4`.",
+      "explanation": "The stop value is excluded."
+    },
+    {
+      "id": "control_002",
+      "category": "control_flow",
+      "prompt": "What does `break` do inside a loop?",
+      "answer": "It exits the nearest enclosing loop immediately.",
+      "explanation": "Execution continues with the first statement after that loop."
+    },
+    {
+      "id": "control_003",
+      "category": "control_flow",
+      "prompt": "What does `continue` do inside a loop?",
+      "answer": "It skips the rest of the current iteration and proceeds to the next iteration.",
+      "explanation": "It does not terminate the loop."
+    },
+    {
+      "id": "control_004",
+      "category": "control_flow",
+      "prompt": "When does the `else` block of a `for` loop execute?",
+      "answer": "When the loop finishes without encountering `break`.",
+      "explanation": "It also executes when the iterable is empty."
+    },
+    {
+      "id": "control_005",
+      "category": "control_flow",
+      "prompt": "Write the conditional expression that returns `\"high\"` when `x > 10`, otherwise `\"low\"`.",
+      "answer": "`\"high\" if x > 10 else \"low\"`.",
+      "explanation": "Python places the true expression before `if` and the false expression after `else`."
+    },
+    {
+      "id": "control_006",
+      "category": "control_flow",
+      "prompt": "What does `[x * 2 for x in range(3)]` return?",
+      "answer": "`[0, 2, 4]`.",
+      "explanation": "The comprehension doubles each value produced by `range(3)`."
+    },
+    {
+      "id": "control_007",
+      "category": "control_flow",
+      "prompt": "What does `any([False, True, False])` return?",
+      "answer": "`True`.",
+      "explanation": "`any` is true when at least one element is truthy."
+    },
+    {
+      "id": "control_008",
+      "category": "control_flow",
+      "prompt": "What does `all([])` return?",
+      "answer": "`True`.",
+      "explanation": "`all` of an empty iterable is vacuously true."
+    },
+    {
+      "id": "control_009",
+      "category": "control_flow",
+      "prompt": "What does `1 < x < 10` mean?",
+      "answer": "`x` is greater than `1` and less than `10`.",
+      "explanation": "Python supports chained comparisons without repeating `x`."
+    },
+    {
+      "id": "control_010",
+      "category": "control_flow",
+      "prompt": "When is the body of `while condition:` executed?",
+      "answer": "Repeatedly while `condition` is truthy.",
+      "explanation": "The condition is checked before every iteration."
+    },
+    {
+      "id": "functions_001",
+      "category": "functions",
+      "prompt": "What does a Python function return if execution reaches the end without a `return` statement?",
+      "answer": "`None`.",
+      "explanation": "Python supplies an implicit `return None`."
+    },
+    {
+      "id": "functions_002",
+      "category": "functions",
+      "prompt": "In `f(3, scale=2)`, which argument is positional and which is keyword-based?",
+      "answer": "`3` is positional; `scale=2` is a keyword argument.",
+      "explanation": "Keyword arguments identify their target parameter by name."
+    },
+    {
+      "id": "functions_003",
+      "category": "functions",
+      "prompt": "When are default parameter expressions evaluated: at function definition time or on every call?",
+      "answer": "At function definition time.",
+      "explanation": "This is why mutable default values can persist across calls."
+    },
+    {
+      "id": "functions_004",
+      "category": "functions",
+      "prompt": "Inside `def f(*args):`, what type is `args`?",
+      "answer": "A tuple.",
+      "explanation": "`*args` collects extra positional arguments."
+    },
+    {
+      "id": "functions_005",
+      "category": "functions",
+      "prompt": "Inside `def f(**kwargs):`, what type is `kwargs`?",
+      "answer": "A dictionary.",
+      "explanation": "`**kwargs` collects extra keyword arguments by name."
+    },
+    {
+      "id": "functions_006",
+      "category": "functions",
+      "prompt": "In `def f(x, *, normalize=False):`, how must `normalize` be supplied?",
+      "answer": "As a keyword argument.",
+      "explanation": "Parameters after a bare `*` are keyword-only."
+    },
+    {
+      "id": "functions_007",
+      "category": "functions",
+      "prompt": "In `def f(x, /, y):`, what restriction applies to `x`?",
+      "answer": "`x` must be passed positionally.",
+      "explanation": "Parameters before `/` are positional-only."
+    },
+    {
+      "id": "functions_008",
+      "category": "functions",
+      "prompt": "By default, what happens if a function assigns to a name that also exists globally?",
+      "answer": "The assignment creates or changes a local variable.",
+      "explanation": "Use `global` only when the function must rebind the module-level name."
+    },
+    {
+      "id": "functions_009",
+      "category": "functions",
+      "prompt": "What does the `global` statement allow a function to do?",
+      "answer": "Rebind a name in the module's global scope.",
+      "explanation": "It changes name resolution for assignments within that function."
+    },
+    {
+      "id": "functions_010",
+      "category": "functions",
+      "prompt": "What does `nonlocal` refer to inside a nested function?",
+      "answer": "A variable in the nearest enclosing function scope.",
+      "explanation": "It does not refer to local or module-global scope."
+    },
+    {
+      "id": "functions_011",
+      "category": "functions",
+      "prompt": "What does `lambda x: x + 1` create?",
+      "answer": "An anonymous function that returns `x + 1`.",
+      "explanation": "A lambda contains one expression whose value is returned."
+    },
+    {
+      "id": "functions_012",
+      "category": "functions",
+      "prompt": "Where is a function's conventional docstring placed?",
+      "answer": "As the first string literal in the function body.",
+      "explanation": "It becomes available through the function's `__doc__` attribute."
+    },
+    {
+      "id": "functions_013",
+      "category": "functions",
+      "prompt": "What is the difference between `transform` and `transform()` when `transform` is a function?",
+      "answer": "`transform` is the function object; `transform()` calls it.",
+      "explanation": "Parentheses invoke the callable."
+    },
+    {
+      "id": "functions_014",
+      "category": "functions",
+      "prompt": "If `values = [1, 2]`, what does `f(*values)` do?",
+      "answer": "It passes `1` and `2` as separate positional arguments.",
+      "explanation": "A leading `*` unpacks an iterable in a function call."
+    },
+    {
+      "id": "mechanics_001",
+      "category": "general_python_mechanics",
+      "prompt": "What is the purpose of an `except ValueError:` block?",
+      "answer": "To handle a `ValueError` raised in the associated `try` block.",
+      "explanation": "Catching a specific exception avoids swallowing unrelated errors."
+    },
+    {
+      "id": "mechanics_002",
+      "category": "general_python_mechanics",
+      "prompt": "What does `raise ValueError(\"bad input\")` do?",
+      "answer": "It raises a `ValueError` with the message `bad input`.",
+      "explanation": "`raise` signals an exception explicitly."
+    },
+    {
+      "id": "mechanics_003",
+      "category": "general_python_mechanics",
+      "prompt": "Does a `finally` block run when an exception occurs?",
+      "answer": "Yes; it runs whether or not an exception occurs.",
+      "explanation": "It is commonly used for unconditional cleanup."
+    },
+    {
+      "id": "mechanics_004",
+      "category": "general_python_mechanics",
+      "prompt": "What benefit does `with open(path) as handle:` provide?",
+      "answer": "It closes the file automatically when the block exits.",
+      "explanation": "The context manager also closes it if an exception occurs."
+    },
+    {
+      "id": "mechanics_005",
+      "category": "general_python_mechanics",
+      "prompt": "What does `iter(values)` return?",
+      "answer": "An iterator over `values`.",
+      "explanation": "The iterator can be advanced with `next`."
+    },
+    {
+      "id": "mechanics_006",
+      "category": "general_python_mechanics",
+      "prompt": "What exception does `next(iterator)` raise when the iterator is exhausted?",
+      "answer": "`StopIteration`.",
+      "explanation": "A `for` loop handles this exception internally."
+    },
+    {
+      "id": "mechanics_007",
+      "category": "general_python_mechanics",
+      "prompt": "What keyword makes a function a generator function?",
+      "answer": "`yield`.",
+      "explanation": "Calling a generator function returns a generator rather than executing it to completion immediately."
+    },
+    {
+      "id": "mechanics_008",
+      "category": "general_python_mechanics",
+      "prompt": "What does `import numpy as np` make `np`?",
+      "answer": "A local alias for the imported `numpy` module.",
+      "explanation": "The alias is used to access module attributes such as `np.array`."
+    },
+    {
+      "id": "mechanics_009",
+      "category": "general_python_mechanics",
+      "prompt": "Why is code often placed under `if __name__ == \"__main__\":`?",
+      "answer": "So it runs when the file is executed directly but not when the file is imported.",
+      "explanation": "Imported modules receive their module name instead of `\"__main__\"`."
+    },
+    {
+      "id": "mechanics_010",
+      "category": "general_python_mechanics",
+      "prompt": "What does `self` conventionally refer to in an instance method?",
+      "answer": "The instance on which the method was called.",
+      "explanation": "Python passes the instance as the first method argument."
+    },
+    {
+      "id": "mechanics_011",
+      "category": "general_python_mechanics",
+      "prompt": "Should `__init__` explicitly return the newly created object?",
+      "answer": "No; `__init__` must return `None`.",
+      "explanation": "Object creation is handled before `__init__` initializes the instance."
+    },
+    {
+      "id": "mechanics_012",
+      "category": "general_python_mechanics",
+      "prompt": "What is `super()` commonly used for in a subclass?",
+      "answer": "To call methods from the parent class, commonly its initializer.",
+      "explanation": "`super()` follows the class method-resolution order."
+    },
+    {
+      "id": "stdlib_001",
+      "category": "pipeline_standard_library",
+      "prompt": "With `from pathlib import Path`, what does `Path(\"data\") / \"counts.csv\"` create?",
+      "answer": "A path representing `data/counts.csv` using the platform's path rules.",
+      "explanation": "The `/` operator joins `Path` components."
+    },
+    {
+      "id": "stdlib_002",
+      "category": "pipeline_standard_library",
+      "prompt": "Which `Path` method checks whether a path exists?",
+      "answer": "`path.exists()`.",
+      "explanation": "It returns a boolean."
+    },
+    {
+      "id": "stdlib_003",
+      "category": "pipeline_standard_library",
+      "prompt": "For `Path(\"sample.fastq.gz\")`, what is `.suffix`?",
+      "answer": "`\".gz\"`.",
+      "explanation": "`.suffix` returns only the final extension."
+    },
+    {
+      "id": "stdlib_004",
+      "category": "pipeline_standard_library",
+      "prompt": "For `Path(\"counts.csv\")`, what is `.stem`?",
+      "answer": "`\"counts\"`.",
+      "explanation": "`.stem` is the final path component without its final suffix."
+    },
+    {
+      "id": "stdlib_005",
+      "category": "pipeline_standard_library",
+      "prompt": "What does `Path(\"data\").glob(\"*.csv\")` return?",
+      "answer": "An iterator of matching paths directly under `data`.",
+      "explanation": "Use `rglob` or a recursive pattern when recursive matching is needed."
+    },
+    {
+      "id": "stdlib_006",
+      "category": "pipeline_standard_library",
+      "prompt": "Which mode opens a gzip-compressed text file for reading with `gzip.open`: `\"rb\"` or `\"rt\"`?",
+      "answer": "`\"rt\"`.",
+      "explanation": "`t` requests decoded text rather than bytes."
+    },
+    {
+      "id": "stdlib_007",
+      "category": "pipeline_standard_library",
+      "prompt": "What type of row does `csv.DictReader` yield?",
+      "answer": "A dictionary-like mapping from column names to field values.",
+      "explanation": "The header supplies the keys unless field names are provided explicitly."
+    },
+    {
+      "id": "stdlib_008",
+      "category": "pipeline_standard_library",
+      "prompt": "What is the difference between `json.load(handle)` and `json.loads(text)`?",
+      "answer": "`load` reads JSON from a file-like object; `loads` parses a string.",
+      "explanation": "The `s` in `loads` refers to a string input."
+    },
+    {
+      "id": "stdlib_009",
+      "category": "pipeline_standard_library",
+      "prompt": "After defining arguments on an `ArgumentParser`, which method parses the command line?",
+      "answer": "`parser.parse_args()`.",
+      "explanation": "It returns a namespace containing the parsed values."
+    },
+    {
+      "id": "stdlib_010",
+      "category": "pipeline_standard_library",
+      "prompt": "What does `check=True` do in `subprocess.run(...)`?",
+      "answer": "It raises `CalledProcessError` if the command exits with a nonzero status.",
+      "explanation": "Without it, a failed external command does not automatically raise for its exit code."
+    },
+    {
+      "id": "stdlib_011",
+      "category": "pipeline_standard_library",
+      "prompt": "Where does `os.environ[\"HOME\"]` obtain its value?",
+      "answer": "From the process environment variable named `HOME`.",
+      "explanation": "Indexing raises `KeyError` if that variable is absent."
+    },
+    {
+      "id": "stdlib_012",
+      "category": "pipeline_standard_library",
+      "prompt": "What does `collections.Counter([\"A\", \"A\", \"B\"])` store?",
+      "answer": "Counts equivalent to `{\"A\": 2, \"B\": 1}`.",
+      "explanation": "`Counter` is a dictionary subclass for frequency counts."
+    },
+    {
+      "id": "stdlib_013",
+      "category": "pipeline_standard_library",
+      "prompt": "What problem does `collections.defaultdict(list)` solve?",
+      "answer": "It automatically supplies an empty list for a missing key.",
+      "explanation": "This is useful when accumulating multiple values per key."
+    },
+    {
+      "id": "stdlib_014",
+      "category": "pipeline_standard_library",
+      "prompt": "What does `itertools.chain(a, b)` do?",
+      "answer": "It lazily iterates through all items of `a`, then all items of `b`.",
+      "explanation": "It does not need to build one combined list."
+    },
+    {
+      "id": "stdlib_015",
+      "category": "pipeline_standard_library",
+      "prompt": "What is conventionally stored in `sys.argv[0]`?",
+      "answer": "The invoked script or program name.",
+      "explanation": "Subsequent entries hold command-line arguments."
+    },
+    {
+      "id": "stdlib_016",
+      "category": "pipeline_standard_library",
+      "prompt": "What does `tempfile.TemporaryDirectory()` provide when used as a context manager?",
+      "answer": "A temporary directory that is cleaned up when the context exits.",
+      "explanation": "Its path is yielded to the `with` block."
+    },
+    {
+      "id": "numpy_001",
+      "category": "numpy",
+      "prompt": "What is the shape of `np.array([[1, 2, 3], [4, 5, 6]])`?",
+      "answer": "`(2, 3)`.",
+      "explanation": "The array has two rows and three columns."
+    },
+    {
+      "id": "numpy_002",
+      "category": "numpy",
+      "prompt": "What does an array's `.ndim` attribute report?",
+      "answer": "The number of array dimensions, or axes.",
+      "explanation": "A matrix-like array normally has `ndim == 2`."
+    },
+    {
+      "id": "numpy_003",
+      "category": "numpy",
+      "prompt": "What does an array's `.dtype` describe?",
+      "answer": "The data type used to store its elements.",
+      "explanation": "Examples include integer, floating-point, boolean, and string dtypes."
+    },
+    {
+      "id": "numpy_004",
+      "category": "numpy",
+      "prompt": "What values does `np.arange(1, 5)` contain?",
+      "answer": "`[1, 2, 3, 4]`.",
+      "explanation": "As with `range`, the stop value is excluded."
+    },
+    {
+      "id": "numpy_005",
+      "category": "numpy",
+      "prompt": "What shape results from `np.arange(6).reshape(2, 3)`?",
+      "answer": "`(2, 3)`.",
+      "explanation": "Reshaping preserves the six total elements."
+    },
+    {
+      "id": "numpy_006",
+      "category": "numpy",
+      "prompt": "Does a basic NumPy slice such as `view = array[1:4]` usually copy the data?",
+      "answer": "No; it usually returns a view.",
+      "explanation": "Changing the view can therefore change the original array."
+    },
+    {
+      "id": "numpy_007",
+      "category": "numpy",
+      "prompt": "How do you explicitly create an independent copy of a NumPy array `a`?",
+      "answer": "`a.copy()`.",
+      "explanation": "The copied array owns separate data."
+    },
+    {
+      "id": "numpy_008",
+      "category": "numpy",
+      "prompt": "What does `a[a > 0]` select?",
+      "answer": "The elements of `a` whose corresponding condition is true.",
+      "explanation": "This is boolean indexing."
+    },
+    {
+      "id": "numpy_009",
+      "category": "numpy",
+      "prompt": "For a two-dimensional array, what does `a.sum(axis=0)` aggregate?",
+      "answer": "It sums down the rows, producing one sum per column.",
+      "explanation": "Axis `0` is the first dimension."
+    },
+    {
+      "id": "numpy_010",
+      "category": "numpy",
+      "prompt": "For a two-dimensional array, what does `a.sum(axis=1)` aggregate?",
+      "answer": "It sums across the columns, producing one sum per row.",
+      "explanation": "Axis `1` is the second dimension."
+    },
+    {
+      "id": "numpy_011",
+      "category": "numpy",
+      "prompt": "What NumPy feature allows a length-3 vector to be added to every row of a compatible matrix?",
+      "answer": "Broadcasting.",
+      "explanation": "Compatible trailing dimensions are expanded conceptually without copying the vector for every row."
+    },
+    {
+      "id": "numpy_012",
+      "category": "numpy",
+      "prompt": "For NumPy arrays `a` and `b`, what does `a * b` perform?",
+      "answer": "Elementwise multiplication.",
+      "explanation": "Matrix multiplication uses `@` or an appropriate dot-product function."
+    },
+    {
+      "id": "numpy_013",
+      "category": "numpy",
+      "prompt": "Which operator performs matrix multiplication for compatible NumPy arrays?",
+      "answer": "`@`.",
+      "explanation": "The `*` operator is elementwise."
+    },
+    {
+      "id": "numpy_014",
+      "category": "numpy",
+      "prompt": "Which function computes a mean while ignoring `NaN` values?",
+      "answer": "`np.nanmean`.",
+      "explanation": "`np.mean` normally propagates `NaN`."
+    },
+    {
+      "id": "numpy_015",
+      "category": "numpy",
+      "prompt": "Which NumPy function returns a boolean mask identifying `NaN` values?",
+      "answer": "`np.isnan`.",
+      "explanation": "The result has one boolean value per tested element."
+    },
+    {
+      "id": "numpy_016",
+      "category": "numpy",
+      "prompt": "What does `np.concatenate([a, b], axis=0)` do for compatible two-dimensional arrays?",
+      "answer": "It joins them along the row axis.",
+      "explanation": "All non-concatenated dimensions must be compatible."
+    },
+    {
+      "id": "numpy_017",
+      "category": "numpy",
+      "prompt": "What does `np.where(mask, x, y)` choose?",
+      "answer": "Elements from `x` where `mask` is true and from `y` where it is false.",
+      "explanation": "The inputs follow NumPy broadcasting rules."
+    },
+    {
+      "id": "numpy_018",
+      "category": "numpy",
+      "prompt": "Which method always returns a flattened copy: `ravel()` or `flatten()`?",
+      "answer": "`flatten()`.",
+      "explanation": "`ravel()` returns a view when possible."
+    },
+    {
+      "id": "pandas_001",
+      "category": "pandas",
+      "prompt": "What is the main structural difference between a pandas `Series` and `DataFrame`?",
+      "answer": "A `Series` is one-dimensional; a `DataFrame` is two-dimensional.",
+      "explanation": "A DataFrame is composed of labeled columns, each resembling a Series."
+    },
+    {
+      "id": "pandas_002",
+      "category": "pandas",
+      "prompt": "Which pandas function reads a CSV file into a DataFrame?",
+      "answer": "`pd.read_csv`.",
+      "explanation": "It accepts a path or file-like object."
+    },
+    {
+      "id": "pandas_003",
+      "category": "pandas",
+      "prompt": "What does `df.columns` contain?",
+      "answer": "The DataFrame's column labels.",
+      "explanation": "It is an index-like object."
+    },
+    {
+      "id": "pandas_004",
+      "category": "pandas",
+      "prompt": "What does `df.shape` return?",
+      "answer": "A tuple `(number_of_rows, number_of_columns)`.",
+      "explanation": "It reports the DataFrame's two dimensions."
+    },
+    {
+      "id": "pandas_005",
+      "category": "pandas",
+      "prompt": "Does `df.loc[...]` select primarily by labels or integer positions?",
+      "answer": "Labels.",
+      "explanation": "`loc` is label-based, including label-based row and column selections."
+    },
+    {
+      "id": "pandas_006",
+      "category": "pandas",
+      "prompt": "Does `df.iloc[...]` select primarily by labels or integer positions?",
+      "answer": "Integer positions.",
+      "explanation": "`iloc` follows zero-based positional indexing."
+    },
+    {
+      "id": "pandas_007",
+      "category": "pandas",
+      "prompt": "What does `df[df[\"count\"] > 10]` return?",
+      "answer": "Rows whose `count` value is greater than 10.",
+      "explanation": "The boolean Series is used as a row filter."
+    },
+    {
+      "id": "pandas_008",
+      "category": "pandas",
+      "prompt": "What does `df[\"log_count\"] = np.log1p(df[\"count\"])` do?",
+      "answer": "It creates or replaces the `log_count` column.",
+      "explanation": "The assigned Series is aligned to the DataFrame index."
+    },
+    {
+      "id": "pandas_009",
+      "category": "pandas",
+      "prompt": "By default, does `df.drop(columns=[\"temp\"])` mutate `df`?",
+      "answer": "No; it returns a new DataFrame.",
+      "explanation": "Assign the result or use an explicit in-place option when appropriate."
+    },
+    {
+      "id": "pandas_010",
+      "category": "pandas",
+      "prompt": "How would you rename column `old` to `new` using `df.rename`?",
+      "answer": "`df.rename(columns={\"old\": \"new\"})`.",
+      "explanation": "The `columns` mapping gives old labels as keys and new labels as values."
+    },
+    {
+      "id": "pandas_011",
+      "category": "pandas",
+      "prompt": "Which method sorts DataFrame rows using values in one or more columns?",
+      "answer": "`df.sort_values(...)`.",
+      "explanation": "Use the `by` argument to name the sorting column or columns."
+    },
+    {
+      "id": "pandas_012",
+      "category": "pandas",
+      "prompt": "What does `df.groupby(\"condition\").size()` produce?",
+      "answer": "The number of rows in each `condition` group.",
+      "explanation": "`size` counts rows regardless of missing values in other columns."
+    },
+    {
+      "id": "pandas_013",
+      "category": "pandas",
+      "prompt": "What does `df.groupby(\"condition\")[\"count\"].mean()` compute?",
+      "answer": "The mean `count` within each condition.",
+      "explanation": "Grouping splits rows by condition before aggregating the selected column."
+    },
+    {
+      "id": "pandas_014",
+      "category": "pandas",
+      "prompt": "Which pandas function performs a database-style join using key columns?",
+      "answer": "`pd.merge`.",
+      "explanation": "The join keys can be supplied with arguments such as `on`, `left_on`, and `right_on`."
+    },
+    {
+      "id": "pandas_015",
+      "category": "pandas",
+      "prompt": "What does `pd.concat([df1, df2], axis=0)` do?",
+      "answer": "It stacks the DataFrames by rows.",
+      "explanation": "Column labels are aligned during concatenation."
+    },
+    {
+      "id": "pandas_016",
+      "category": "pandas",
+      "prompt": "Which DataFrame method returns a boolean table marking missing values?",
+      "answer": "`df.isna()`.",
+      "explanation": "`isnull` is an equivalent alias."
+    },
+    {
+      "id": "pandas_017",
+      "category": "pandas",
+      "prompt": "What does `df[\"batch\"].fillna(\"unknown\")` return?",
+      "answer": "A Series with missing batch values replaced by `\"unknown\"`.",
+      "explanation": "The original Series is not changed unless the result is assigned or an in-place operation is requested."
+    },
+    {
+      "id": "pandas_018",
+      "category": "pandas",
+      "prompt": "What does `df.dropna(subset=[\"sample_id\"])` remove?",
+      "answer": "Rows whose `sample_id` is missing.",
+      "explanation": "Other columns do not affect this subset-specific missingness filter."
+    },
+    {
+      "id": "pandas_019",
+      "category": "pandas",
+      "prompt": "What does `df[\"sample_id\"].duplicated()` mark as `True` by default?",
+      "answer": "Every repeated occurrence after the first occurrence.",
+      "explanation": "The first occurrence is retained as non-duplicate with the default `keep=\"first\"`."
+    },
+    {
+      "id": "pandas_020",
+      "category": "pandas",
+      "prompt": "What does `df.drop_duplicates()` do by default?",
+      "answer": "It removes duplicate rows while keeping the first occurrence.",
+      "explanation": "A `subset` can restrict which columns define duplicates."
+    },
+    {
+      "id": "pandas_021",
+      "category": "pandas",
+      "prompt": "What does `df[\"tissue\"].value_counts()` return?",
+      "answer": "Counts of each distinct non-missing tissue value, ordered by frequency by default.",
+      "explanation": "Use `dropna=False` when missing values should be counted."
+    },
+    {
+      "id": "pandas_022",
+      "category": "pandas",
+      "prompt": "What does `df.reset_index(drop=True)` do?",
+      "answer": "It replaces the existing index with a default integer index and does not retain the old index as a column.",
+      "explanation": "`drop=True` discards the old index values."
+    },
+    {
+      "id": "pandas_023",
+      "category": "pandas",
+      "prompt": "What does `df.set_index(\"gene_id\")` do?",
+      "answer": "It returns a DataFrame using `gene_id` as the row index.",
+      "explanation": "By default the source column is removed from the ordinary columns."
+    },
+    {
+      "id": "pandas_024",
+      "category": "pandas",
+      "prompt": "What does `df[\"gene\"].str.upper()` return?",
+      "answer": "A Series with each non-missing string converted to uppercase.",
+      "explanation": "The `.str` accessor exposes vectorized string methods."
+    },
+    {
+      "id": "pandas_025",
+      "category": "pandas",
+      "prompt": "What does `df[\"count\"].astype(float)` do?",
+      "answer": "It returns the `count` Series converted to a floating-point dtype.",
+      "explanation": "Conversion fails when values cannot be represented in the requested dtype."
+    },
+    {
+      "id": "pandas_026",
+      "category": "pandas",
+      "prompt": "For simple arithmetic, why is `df[\"x\"] * 2` generally preferred over `df[\"x\"].apply(lambda x: x * 2)`?",
+      "answer": "The direct vectorized operation is clearer and generally faster.",
+      "explanation": "`apply` invokes Python-level function logic element by element for this case."
+    },
+    {
+      "id": "pandas_027",
+      "category": "pandas",
+      "prompt": "What is `pivot_table` commonly used to do?",
+      "answer": "Reshape and aggregate data into a table defined by index and column groups.",
+      "explanation": "Duplicate input combinations can be combined with an aggregation function."
+    },
+    {
+      "id": "pandas_028",
+      "category": "pandas",
+      "prompt": "What does `pd.melt` generally convert?",
+      "answer": "Wide-form columns into long-form variable and value rows.",
+      "explanation": "Identifier columns can be retained with `id_vars`."
+    },
+    {
+      "id": "pandas_029",
+      "category": "pandas",
+      "prompt": "Why is `index=False` often supplied to `df.to_csv(...)`?",
+      "answer": "To avoid writing the DataFrame index as an extra output column.",
+      "explanation": "The data columns are still written normally."
+    },
+    {
+      "id": "pandas_030",
+      "category": "pandas",
+      "prompt": "What does `df.copy()` provide?",
+      "answer": "A separate DataFrame object containing a copy of the data and labels.",
+      "explanation": "It is the explicit choice when later operations should not intentionally target the same DataFrame object."
+    },
+    {
+      "id": "biopython_001",
+      "category": "biopython",
+      "prompt": "Which Biopython class represents a biological sequence such as DNA or protein?",
+      "answer": "`Bio.Seq.Seq`.",
+      "explanation": "A `Seq` supports sequence-oriented operations such as reverse complementation and translation."
+    },
+    {
+      "id": "biopython_002",
+      "category": "biopython",
+      "prompt": "Which `Seq` method returns the reverse complement of a DNA sequence?",
+      "answer": "`reverse_complement()`.",
+      "explanation": "It reverses the sequence and complements each nucleotide."
+    },
+    {
+      "id": "biopython_003",
+      "category": "biopython",
+      "prompt": "Which `Seq` method translates a nucleotide sequence into amino acids?",
+      "answer": "`translate()`.",
+      "explanation": "Translation uses a genetic code table and codon interpretation."
+    },
+    {
+      "id": "biopython_004",
+      "category": "biopython",
+      "prompt": "What does a `SeqRecord` combine with its sequence?",
+      "answer": "Identifiers, descriptions, and other annotations.",
+      "explanation": "Its biological sequence is stored in the `.seq` attribute."
+    },
+    {
+      "id": "biopython_005",
+      "category": "biopython",
+      "prompt": "Which `SeqRecord` attribute normally holds the primary record identifier?",
+      "answer": "`.id`.",
+      "explanation": "The longer descriptive text is normally stored in `.description`."
+    },
+    {
+      "id": "biopython_006",
+      "category": "biopython",
+      "prompt": "What kind of object does `SeqIO.parse(path, \"fasta\")` return?",
+      "answer": "An iterator yielding `SeqRecord` objects.",
+      "explanation": "It processes multiple records lazily rather than returning a list."
+    },
+    {
+      "id": "biopython_007",
+      "category": "biopython",
+      "prompt": "When should `SeqIO.read(path, format)` be used instead of `SeqIO.parse`?",
+      "answer": "When the file is expected to contain exactly one record.",
+      "explanation": "`SeqIO.read` raises if there are zero or multiple records."
+    },
+    {
+      "id": "biopython_008",
+      "category": "biopython",
+      "prompt": "What does `SeqIO.write(records, path, \"fasta\")` return?",
+      "answer": "The number of records written.",
+      "explanation": "The format string controls the output serialization."
+    },
+    {
+      "id": "biopython_009",
+      "category": "biopython",
+      "prompt": "What format string is normally passed to `SeqIO.parse` for standard FASTQ data?",
+      "answer": "`\"fastq\"`.",
+      "explanation": "Biopython also documents aliases and historical FASTQ variants."
+    },
+    {
+      "id": "biopython_010",
+      "category": "biopython",
+      "prompt": "Where is the sequence stored inside a `SeqRecord` named `record`?",
+      "answer": "`record.seq`.",
+      "explanation": "The value is normally a `Seq` object."
+    },
+    {
+      "id": "biopython_011",
+      "category": "biopython",
+      "prompt": "Where are per-base PHRED qualities commonly stored on a FASTQ-derived `SeqRecord`?",
+      "answer": "`record.letter_annotations[\"phred_quality\"]`.",
+      "explanation": "The list aligns one quality value with each sequence letter."
+    },
+    {
+      "id": "biopython_012",
+      "category": "biopython",
+      "prompt": "What does `SeqIO.to_dict(records)` use as dictionary keys by default?",
+      "answer": "Each record's identifier.",
+      "explanation": "A custom key function can be supplied when another key is required."
+    },
+    {
+      "id": "pysam_001",
+      "category": "pysam",
+      "prompt": "Which mode is normally used to open a BAM file for reading with `pysam.AlignmentFile`?",
+      "answer": "`\"rb\"`.",
+      "explanation": "`b` indicates the binary BAM format."
+    },
+    {
+      "id": "pysam_002",
+      "category": "pysam",
+      "prompt": "Which pysam class is used to read VCF or BCF variant files?",
+      "answer": "`pysam.VariantFile`.",
+      "explanation": "Iterating over it yields variant records."
+    },
+    {
+      "id": "pysam_003",
+      "category": "pysam",
+      "prompt": "What file feature is generally required for efficient region-based `fetch` from a BAM or compressed VCF?",
+      "answer": "An appropriate index.",
+      "explanation": "Examples include a BAI/CSI index for BAM and a tabix/CSI index for suitable compressed variant files."
+    },
+    {
+      "id": "pysam_004",
+      "category": "pysam",
+      "prompt": "Is `AlignedSegment.reference_start` zero-based or one-based?",
+      "answer": "Zero-based.",
+      "explanation": "This differs from many human-readable genomics coordinate conventions."
+    },
+    {
+      "id": "pysam_005",
+      "category": "pysam",
+      "prompt": "Which `AlignedSegment` attribute gives the read's mapping quality?",
+      "answer": "`.mapping_quality`.",
+      "explanation": "It exposes the MAPQ field."
+    },
+    {
+      "id": "pysam_006",
+      "category": "pysam",
+      "prompt": "Which `AlignedSegment` attribute gives the query/read name?",
+      "answer": "`.query_name`.",
+      "explanation": "It corresponds to the read identifier."
+    },
+    {
+      "id": "pysam_007",
+      "category": "pysam",
+      "prompt": "For a `VariantRecord`, which is zero-based: `.start` or `.pos`?",
+      "answer": "`.start` is zero-based; `.pos` is one-based.",
+      "explanation": "Choosing the wrong property can create an off-by-one coordinate error."
+    },
+    {
+      "id": "pysam_008",
+      "category": "pysam",
+      "prompt": "How are per-sample genotype fields accessed from a `VariantRecord` named `record`?",
+      "answer": "Through `record.samples`, indexed by sample name or iterated as sample entries.",
+      "explanation": "Each sample entry exposes fields such as `GT` when present."
+    },
+    {
+      "id": "scipy_001",
+      "category": "scipy_stats",
+      "prompt": "What two central values are exposed by the result of `scipy.stats.ttest_ind(a, b)`?",
+      "answer": "The test statistic and p-value.",
+      "explanation": "They are available as result attributes such as `.statistic` and `.pvalue`."
+    },
+    {
+      "id": "scipy_002",
+      "category": "scipy_stats",
+      "prompt": "What does `nan_policy=\"omit\"` request in supported SciPy statistical functions?",
+      "answer": "That `NaN` observations be omitted from the calculation.",
+      "explanation": "Other policies may propagate missingness or raise an error."
+    },
+    {
+      "id": "scipy_003",
+      "category": "scipy_stats",
+      "prompt": "Which SciPy function computes Spearman rank correlation?",
+      "answer": "`scipy.stats.spearmanr`.",
+      "explanation": "It returns a correlation statistic and a p-value."
+    },
+    {
+      "id": "scipy_004",
+      "category": "scipy_stats",
+      "prompt": "Which SciPy function performs Fisher's exact test on a contingency table?",
+      "answer": "`scipy.stats.fisher_exact`.",
+      "explanation": "It is commonly used for a 2-by-2 contingency table."
+    },
+    {
+      "id": "scipy_005",
+      "category": "scipy_stats",
+      "prompt": "Which SciPy function performs the Mann-Whitney U test?",
+      "answer": "`scipy.stats.mannwhitneyu`.",
+      "explanation": "Its arguments include the two samples and an alternative-hypothesis choice."
+    },
+    {
+      "id": "scipy_006",
+      "category": "scipy_stats",
+      "prompt": "What kind of information does `scipy.stats.describe(values)` summarize?",
+      "answer": "Count, range, mean, variance, skewness, and kurtosis.",
+      "explanation": "The function returns a structured result rather than only one statistic."
+    },
+    {
+      "id": "plotting_001",
+      "category": "matplotlib_seaborn",
+      "prompt": "What two objects are returned by `fig, ax = plt.subplots()`?",
+      "answer": "A Matplotlib `Figure` and one `Axes`.",
+      "explanation": "The `Axes` is the plotting area used for calls such as `ax.plot`."
+    },
+    {
+      "id": "plotting_002",
+      "category": "matplotlib_seaborn",
+      "prompt": "Which object-oriented Matplotlib call draws a line on an axes object `ax`?",
+      "answer": "`ax.plot(...)`.",
+      "explanation": "It returns one or more line artists."
+    },
+    {
+      "id": "plotting_003",
+      "category": "matplotlib_seaborn",
+      "prompt": "Which method sets the x-axis label on `ax`?",
+      "answer": "`ax.set_xlabel(...)`.",
+      "explanation": "The corresponding y-axis method is `set_ylabel`."
+    },
+    {
+      "id": "plotting_004",
+      "category": "matplotlib_seaborn",
+      "prompt": "Which method saves a Matplotlib figure object `fig` to a file?",
+      "answer": "`fig.savefig(...)`.",
+      "explanation": "The file format can usually be inferred from the path suffix."
+    },
+    {
+      "id": "plotting_005",
+      "category": "matplotlib_seaborn",
+      "prompt": "Which axes method creates a scatter plot?",
+      "answer": "`ax.scatter(...)`.",
+      "explanation": "It plots points from paired x and y coordinates."
+    },
+    {
+      "id": "plotting_006",
+      "category": "matplotlib_seaborn",
+      "prompt": "In `sns.boxplot(data=df, x=\"group\", y=\"value\")`, what does `x=\"group\"` specify?",
+      "answer": "The DataFrame column used for groups along the x-axis.",
+      "explanation": "The `data` argument lets column names be supplied as strings."
+    },
+    {
+      "id": "plotting_007",
+      "category": "matplotlib_seaborn",
+      "prompt": "What does Seaborn's `hue` argument generally control?",
+      "answer": "An additional grouping variable represented by color.",
+      "explanation": "It splits or colors marks according to the named variable."
+    },
+    {
+      "id": "plotting_008",
+      "category": "matplotlib_seaborn",
+      "prompt": "Why might `plt.close(fig)` be used in a script that generates many figures?",
+      "answer": "To release that figure's plotting resources after it is saved or used.",
+      "explanation": "Otherwise many open figures can accumulate in memory."
+    },
+    {
+      "id": "pytest_001",
+      "category": "pytest",
+      "prompt": "What ordinary Python statement is used for most pytest checks?",
+      "answer": "`assert`.",
+      "explanation": "Pytest rewrites assertions to provide informative failure output."
+    },
+    {
+      "id": "pytest_002",
+      "category": "pytest",
+      "prompt": "How do you assert that `parse()` raises `ValueError` in pytest?",
+      "answer": "`with pytest.raises(ValueError): parse()`.",
+      "explanation": "The context manager passes only when the expected exception is raised."
+    },
+    {
+      "id": "pytest_003",
+      "category": "pytest",
+      "prompt": "Which pytest helper is commonly used for approximate floating-point comparisons?",
+      "answer": "`pytest.approx`.",
+      "explanation": "It supports tolerances that avoid brittle exact float equality."
+    },
+    {
+      "id": "pytest_004",
+      "category": "pytest",
+      "prompt": "Which decorator declares a pytest fixture?",
+      "answer": "`@pytest.fixture`.",
+      "explanation": "Test functions request a fixture by naming it as a parameter."
+    },
+    {
+      "id": "pytest_005",
+      "category": "pytest",
+      "prompt": "Which decorator runs one test function with multiple supplied input cases?",
+      "answer": "`@pytest.mark.parametrize`.",
+      "explanation": "Each parameter set becomes a separately reported test case."
+    },
+    {
+      "id": "pytest_006",
+      "category": "pytest",
+      "prompt": "What does pytest's built-in `tmp_path` fixture provide?",
+      "answer": "A temporary directory represented by a `pathlib.Path` for one test.",
+      "explanation": "It is useful for isolated file-based tests."
+    }
+  ]
+}

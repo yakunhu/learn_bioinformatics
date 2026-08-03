@@ -1,0 +1,20 @@
+# Personal learning state
+/.drill-syntax-bioinformatics/
+/.programming-tutor/*_progress.yaml
+/.programming-tutor/*_session_log.yaml
+
+# Private learner work
+/Python/
+/R/
+/r_practice_7_10.zip
+
+# Temporary research and local Codex state
+/.scratch/
+/.codex/
+
+# Language and editor runtime files
+**/__pycache__/
+*.py[cod]
+*.Rhistory
+*.RData
+*.Ruserdata
