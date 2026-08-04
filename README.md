@@ -10,19 +10,20 @@ Clone the repository and open its root as a Codex workspace, then ask Codex to u
 
 ## 🗂️ Question banks
 
-A **quickfire question** is a short prompt graded correct or incorrect, while a **full question** is a larger, multi-step assignment graded against detailed criteria.
+A **quickfire question** is a short prompt graded correct or incorrect, while a **full question** is a larger, multistep assignment graded against detailed criteria.
 
-To generate a new category, first decide whether you want quickfire or full questions, then ask Codex to extend the appropriate bank with `drill-syntax-bioinformatics` or the full-question curriculum with the `programming-tutor workflow`. 
+To generate a new category, first decide whether you want quickfire or full questions, then ask Codex to extend the appropriate bank with `drill-syntax-bioinformatics` or the full question curriculum with the `programming-tutor` workflow.
 
-Browse the complete 📚 [Python bank](.agents/skills/drill-syntax-bioinformatics/references/python_question_bank.json), [R bank](.agents/skills/drill-syntax-bioinformatics/references/r_question_bank.json), and [statistics bank](.agents/skills/drill-syntax-bioinformatics/references/statistics_question_bank.json) in the [question-bank folder](.agents/skills/drill-syntax-bioinformatics/references/).
+Browse the complete 📚 [Python bank](.agents/skills/drill-syntax-bioinformatics/references/python_question_bank.json), [R bank](.agents/skills/drill-syntax-bioinformatics/references/r_question_bank.json), and [statistics bank](.agents/skills/drill-syntax-bioinformatics/references/statistics_question_bank.json) in the [question bank folder](.agents/skills/drill-syntax-bioinformatics/references/).
 
 ## 💬 Question sessions
 
-Name the track or category you want—for example, **“statistics”**—and the Skill selects that category and presents one question at a time.
+Name the track or category you want, for example **“statistics”**, and the agent selects that category and presents one question at a time.
 
 It grades the meaning of each answer as correct or incorrect, gives concise feedback, and schedules missed material for later review so practice adapts to your needs.
 
 For quickfire questions, the `drill-syntax-bioinformatics` Skill draws initial quickfire questions from curated Python, R, and statistics banks organized by practical categories, then generates review variants that test the same objective with changed details.
 
-For full questions, //
+For full questions, the curriculum Skill reads the learner's progress and curriculum order, selects the category and objectives, and feeds that context to the tutor agent.
 
+The tutor agent generates one full question from those objectives, tests and grades the learner's response, then sends the result back to the curriculum Skill, which records the score and schedules review.
