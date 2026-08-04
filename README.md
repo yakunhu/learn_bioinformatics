@@ -24,6 +24,6 @@ It grades the meaning of each answer as correct or incorrect, gives concise feed
 
 For quickfire questions, the `drill-syntax-bioinformatics` Skill draws initial quickfire questions from curated Python, R, and statistics banks organized by practical categories, then generates review variants that test the same objective with changed details.
 
-For full questions, the curriculum Skill reads the learner's progress and curriculum order, selects the category and objectives, and feeds that context to the tutor agent.
+For full questions, the `programming-tutor-curriculum` Skill reads the learner's progress and curriculum order, selects the category and objectives, and feeds that context to the `programming-tutor`.
 
 The tutor agent generates one full question from those objectives, tests and grades the learner's response, then sends the result back to the curriculum Skill, which records the score and schedules review.
